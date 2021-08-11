@@ -1,0 +1,180 @@
+
+/* __________________ Variables __________________ */
+
+$tsp: 		#00000000
+$w: 			#ffffff
+$b: 			#000000
+
+$dyellow:	#4f3e05
+$dyellow2:	#574a1d
+$dark:		#0e101a
+$ldark:		#27262d
+$grey:		#eaeaea
+
+$lBlueB:		#CCDDFA
+$dBlueB:		#192944
+$lBlueT:		#F6F9FF
+$dBlueT:		#213657
+$yellow:		#FFDE00
+$orange:		#FD5900
+$cream:			#E5E5E5
+
+$header_height: 120px
+$header_height_mob: 64px
+$skew: 10deg
+
+/* __________________ Icons gradient __________________ */
+
+.gradient
+	fill: url(#gradient)
+	--grad-col1: #{$lBlueB}
+	--grad-col2: #{$dBlueB}
+	&:hover, &.active
+		--grad-col1: #{$yellow}
+		--grad-col2: #{$orange}
+
+/* __________________ Mixins __________________ */
+
+
+
+/* __________________ Reset styles __________________ */
+
+*
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	color: inherit
+	box-sizing: border-box
+	line-height: inherit
+	line-height: 1.08
+
+/* __________________ General Tags __________________ */
+
+html
+	max-width: 100vw
+	scroll-behavior: unset
+	position: relative
+	font-smooth: antialiased
+	-webkit-font-smoothing: antialiased
+	font-size: 14px
+	font-family: 'Gilroy', sans-serif
+
+body
+	width: 100%
+	height: 100%
+	position: relative
+	z-index: 1
+	padding-top: calc( #{$header_height} - 5px )
+	background-color: $cream
+
+section
+	position: relative
+	z-index: 5
+	max-width: 100vw
+	overflow: hidden
+
+@for $i from 1 through 6
+  h#{$i}
+    text-transform: uppercase
+
+h3
+	width: max-content
+	margin: 0 auto
+	text-align: center
+	font-size: 64px
+	font-weight: 900
+	color: $dBlueT
+	position: relative
+	.angle
+		position: absolute
+		stroke: $dBlueT
+		transition: all 0.2s ease-in
+		&:nth-of-type(1)
+			top: -36px
+			left: -50px
+		&:nth-of-type(2)
+			bottom: -30px
+			right: -45px
+
+li, span
+	display: block
+	width: max-content
+
+a
+	display: block
+	width: max-content
+	text-decoration: none
+	transition: all 0.2s linear
+
+svg
+	transition: all 0.2s linear
+	path
+		transition: all 0.2s linear
+	stop
+		transition: all 0.2s linear
+img
+	width: 100%
+	height: auto
+
+button, [type=submit], .button
+	-moz-appearance: none
+	-webkit-appearance: none
+	appearance: none
+	padding: 14px 39px
+	font-size: 18px
+	line-height: 1.08
+	font-weight: normal
+	text-align: center
+	cursor: pointer
+	transition: all 0.2s linear
+
+/* __________________ General Classes __________________ */
+
+.wrapper
+	width: 89%
+	margin: 0 auto
+	position: relative
+	z-index: 5
+
+.grecaptcha-badge
+	display: none !important
+	opacity: 0 !important
+	visibility: hidden !important
+
+.angles_button
+	width: max-content
+	position: relative
+	padding: 27px
+	font-size: 0
+	.angle
+		position: absolute
+		stroke: $w
+		transition: all 0.2s ease-in
+		&:nth-of-type(1)
+			top: 0
+			left: 0
+		&:nth-of-type(2)
+			right: 0
+			bottom: 0
+	button
+		font-size: 18px
+		margin: 0
+	&:hover
+		.angle:nth-of-type(1)
+			transform: translate(-6px, -6px)
+		.angle:nth-of-type(2)
+			transform: translate(6px, 6px)
+
+[data-aos="draw"]
+	stroke-dasharray: 600
+	stroke-dashoffset: 2000
+	&.aos-animate
+		stroke-dashoffset: 1400
+[data-aos="draw_building"]
+	stroke-dasharray: 155
+	stroke-dashoffset: 1400
+	stroke: $tsp
+	&.aos-animate
+		stroke-dashoffset: 1250
+		stroke: $dBlueB

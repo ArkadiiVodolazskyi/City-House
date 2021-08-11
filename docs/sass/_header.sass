@@ -1,0 +1,332 @@
+#header_main
+	height: $header_height
+	position: fixed
+	top: 0
+	left: 0
+	width: 100vw
+	z-index: 500
+	background-color: $dBlueB
+	color: $w
+	box-shadow: 0px 10px 20px rgba($b, 0.15)
+	transition: all 0.4s ease
+	&:not(.active)
+		&.roll
+			background-color: rgba($dBlueB, 0.8)
+	.wrapper
+		padding: 25px 0
+		display: flex
+		align-items: center
+		justify-content: space-between
+	.logo_kadorrcity
+		display: flex
+		align-items: center
+		gap: 20px
+		.icon
+			fill: $w
+		.text
+			text-align: center
+			h1
+				font-weight: 700
+				font-size: 33px
+				line-height: 41px
+			p
+				padding-top: 5px
+				font-weight: 300
+				font-size: 11px
+				line-height: 13px
+				position: relative
+				&::before, &::after
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					height: 1px
+					transform: translate(0, -50%)
+					transition: all 0.2s linear
+				&::before
+					width: 100%
+					background-color: rgba($w, 0.5)
+					z-index: 10
+				&::after
+					width: 0
+					height: 2px
+					background-color: rgba($dBlueB, 0.5)
+					z-index: 15
+		&:hover
+			svg
+				fill: $lBlueB
+			p::after
+				width: 100%
+	nav
+		font-size: 14px
+		line-height: 17px
+		font-weight: 500
+		text-transform: uppercase
+		.nav_list
+			display: flex
+			align-items: center
+			justify-content: space-between
+		.nav_item
+			position: relative
+			&:hover .nav_sublist
+				opacity: 1
+				visibility: visible
+		.nav_link
+			padding: 15px
+			text-decoration: underline
+			text-decoration-color: $tsp
+			text-decoration-thickness: 1px
+			text-underline-offset: 5px
+			&:hover
+				text-decoration-color: $w
+	.phones
+		display: flex
+		align-items: center
+		gap: 13px
+		svg
+			stroke: $w
+		a
+			font-size: 18px
+			line-height: 1.08
+			text-decoration: underline
+			text-decoration-color: $tsp
+			text-decoration-thickness: 1px
+			text-underline-offset: 5px
+			&:hover
+				text-decoration-color: $w
+	.socials
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		gap: 5px
+		a
+			svg
+				fill: $w
+				stroke: $w
+			&:hover svg
+				fill: $lBlueB
+				stroke: $lBlueB
+	.open-request
+		background-color: $w
+		color: $dBlueT
+		cursor: pointer
+		border-color: $tsp
+		position: relative
+		*
+			box-sizing: border-box
+		&:hover .button__background
+			background-color: $lBlueB
+		@media (min-width: 1025px)
+			opacity: 0
+			transform: translateY(60px)
+			&.loaded
+				animation: headerButton 0.6s forwards ease
+		.text
+			position: relative
+			color: $dBlueT
+		.button__background
+			width: 100%
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background: $w
+			position: absolute
+			transition: all .3s linear
+		.button__shine
+			width: 100%
+			animation: shining 2s ease 2s infinite both running
+			border: 2px solid $dBlueB
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: -1px
+			opacity: .5
+			z-index: 1
+			-webkit-clip-path: polygon(-50% 0,0 0,-80% 100%,-30% 100%)
+			clip-path: polygon(-50% 0,0 0,-80% 100%,-30% 100%)
+			transition: -webkit-clip-path .7s
+			transition: clip-path .7s
+			transition: clip-path .7s, -webkit-clip-path .7s
+	#expand_menu
+		width: 40px
+		height: 40px
+		background-color: $tsp
+		position: relative
+		display: none
+		svg
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			stroke: $w
+		.close
+			opacity: 0
+			visibility: hidden
+		&:hover svg
+			stroke: $b
+		&.active
+			.hamb
+				opacity: 0
+				visibility: hidden
+			.close
+				opacity: 1
+				visibility: visible
+
+#header_mobile
+	position: fixed
+	top: $header_height_mob
+	left: 0
+	width: 100vw
+	height: calc( 100vh - #{$header_height_mob} )
+	z-index: 1000
+	background-color: rgba(#303032, 0.9)
+	color: $w
+	overflow: hidden
+	backdrop-filter: blur(5px)
+	overflow: hidden
+	transition: all 0.4s ease
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+	.wrapper
+		width: 80%
+		height: 100%
+		padding: 30px 0 20px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		overflow: hidden
+	nav
+		ul
+			flex-direction: column
+			gap: 20px
+			align-items: center
+			li a
+				text-align: center
+				font-size: 18px
+				font-weight: 500
+				letter-spacing: -0.27px
+				color: #f2f2f2
+				text-transform: uppercase
+				&:hover
+					color: $b
+	.slogan
+		display: flex
+		align-items: center
+		justify-content: center
+		> *
+			flex-shrink: 0
+		svg
+			width: 130px
+			height: 40px
+		.dash
+			width: 19px
+			height: 1px
+			background-color: $w
+			margin: 0 20px 24px
+		.slogan_text
+			line-height: 1.29
+			font-weight: normal
+			font-size: 18px
+	.contacts
+		display: grid
+		grid-template-areas: "phones socials" "address socials" "schedule socials"
+		justify-content: center
+		gap: 0 30px
+		.phones, .address, .schedule
+			display: flex
+			align-items: center
+			padding: 10px 0
+			svg
+				margin-right: 10px
+			a, p
+				color: $w
+				font: 20px GothamPro, sans-serif
+				line-height: 1.19
+			span
+				font: 16px GothamPro, sans-serif
+				letter-spacing: -0.17px
+				margin-bottom: 5px
+				color: #f2f2f2
+			a:hover
+				color: $b
+		.phones
+			grid-area: phones
+		.address
+			grid-area: address
+		.schedule
+			grid-area: schedule
+		.socials
+			grid-area: socials
+			display: flex
+			flex-direction: column
+			align-items: flex-end
+			gap: 8px
+			svg
+				&.stroke
+					stroke: $b
+					&:hover
+						stroke: $w
+				&:not(.stroke)
+					fill: $b
+					&:hover
+						fill: $w
+	.bottom
+		.copyright, .development
+			display: flex
+			justify-content: center
+			align-items: center
+			font-size: 16px
+			font-weight: 500
+			line-height: 2.65
+			color: $w
+			text-transform: uppercase
+		.development
+			margin-top: 10px
+			padding-top: 10px
+			border-top: 0.7px solid #474747
+			a
+				display: flex
+				align-items: center
+			svg
+				margin-left: 12px
+				width: 70px
+				height: 27px
+
+#overlay
+	position: fixed
+	z-index: 3000
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	width: 100vw
+	height: 100vh
+	background-color: rgba($b, 0.9)
+	backdrop-filter: blur(15px)
+	cursor: pointer
+	transition: all 0.2s linear
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+
+
+
+
+
+
+
+
+
+
+
+
+

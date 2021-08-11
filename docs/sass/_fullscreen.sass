@@ -1,0 +1,141 @@
+.fullscreen
+	position: fixed
+	z-index: 2000
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+	background-color: $b
+	transition: all 0.3s ease-in
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+
+#fullscreen-portfolio
+	&:not(.active) .image
+		visibility: hidden !important
+	.wrapper
+		height: 100%
+		> .toSlick
+			height: 100%
+	.slick-arrow.hs6
+		position: absolute
+		z-index: inherit
+		top: 50%
+		&.slick-disabled
+			opacity: 0
+		svg
+			stroke: #EAEAEA
+			width: 28px
+			height: 54px
+		&:hover svg
+			stroke: $w
+		&.slick-prev
+			left: -90px
+			transform: translate(0, -50%)
+		&.slick-next
+			right: -90px
+			transform: translate(0, -50%)
+	.gallery
+		display: inline-flex
+		align-items: stretch
+		width: 100vw
+		height: 100vh
+		gap: 40px
+		padding: 36px 0
+		overflow: hidden
+		transition: all 0.4s ease-in-out
+		&[aria-hidden=true]
+			opacity: 0
+			visibility: hidden
+	.left
+		width: 87%
+		position: relative
+		.image
+			width: auto
+			height: auto
+			max-height: 100%
+			max-width: 100%
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			transition: all 0.2s linear
+			opacity: 0
+			visibility: hidden
+			&.active
+				opacity: 1
+				visibility: visible
+	.right
+		width: 13%
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		gap: 30px
+		position: relative
+		.slick-arrow
+			display: none !important
+			position: absolute
+			top: 50%
+			z-index: 200
+			&.slick-prev
+				left: 0
+				transform: translate(-30px, -50%)
+			&.slick-next
+				right: 0
+				transform: translate(30px, -50%)
+			&:hover svg
+				stroke: $w
+			&.slick-disabled
+				opacity: 0.2
+				pointer-events: none
+		.toSlick
+			width: 100%
+			height: 100%
+			overflow: hidden
+			padding-top: 50px
+			.slick-list
+				padding: 120px 0 20px !important
+				overflow: hidden
+		.image
+			width: 100%
+			height: 115px
+			margin: 8px 0
+			display: inline-block
+			position: relative
+			overflow: hidden
+			cursor: pointer
+			transition: all 0.2s linear
+			border: 2px solid $tsp
+			&:hover, &.active
+				border: 2px solid $w
+			img
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				min-width: 100%
+				min-height: 100%
+	#close-fullscreen-portfolio
+		padding: 14px 16px
+		background-color: #27262d
+		position: absolute
+		z-index: 2050
+		top: 37px
+		right: 65px
+		svg
+			width: 37px
+			height: 37px
+			stroke: $w
+		&:hover
+			background-color: lighten(#27262d, 10%)
+			svg
+				stroke: $w
+
+
+
