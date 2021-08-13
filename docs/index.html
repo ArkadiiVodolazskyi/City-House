@@ -11,6 +11,7 @@
 
 	<!-- Libraries CSS -->
 	<link rel="stylesheet" href="./js/libs/aos.css">
+	<link rel="stylesheet" href="./js/libs/swiper-bundle.min.css">
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="./css/main.css">
@@ -282,18 +283,18 @@
 						<svg width="75" height="17"><use xlink:href="./img/icons.svg#logo_youtube"></use></svg>
 					</a>
 				</div>
-				<div class="right">
+				<div id="pros_list" class="right">
 					<ul>
-						<li class="active">Собственный парк</li>
-						<li>Территория коворкинга</li>
-						<li>Терраса с зонами отдыха</li>
-						<li>Рестораны и кофетерии</li>
-						<li>Футбольная и баскетбольная площадки</li>
-						<li>Пешеходные фонтаны и аллеи сакур</li>
-						<li>Зона выгула собак</li>
-						<li>Более 50 000 кв.м офисных и торговых помещений</li>
-						<li>Детское пространство под открытым небом</li>
-						<li>Спортивная дорожка 2,2 км</li>
+						<li class="active" data-aos="flip-up" data-aos-easing="linear" data-aos-duration="200">Собственный парк</li>
+						<li data-aos="flip-up" data-aos-easing="linear" data-aos-duration="200">Территория коворкинга</li>
+						<li data-aos="flip-up" data-aos-easing="linear" data-aos-duration="200">Терраса с зонами отдыха</li>
+						<li data-aos="flip-up" data-aos-easing="linear" data-aos-duration="200">Рестораны и кофетерии</li>
+						<li data-aos="flip-up" data-aos-easing="linear" data-aos-duration="200">Футбольная и баскетбольная площадки</li>
+						<li data-aos="flip-up" data-aos-easing="linear" data-aos-duration="200">Пешеходные фонтаны и аллеи сакур</li>
+						<li data-aos="flip-up" data-aos-easing="linear" data-aos-duration="200">Зона выгула собак</li>
+						<li data-aos="flip-up" data-aos-easing="linear" data-aos-duration="200">Более 50 000 кв.м офисных и торговых помещений</li>
+						<li data-aos="flip-up" data-aos-easing="linear" data-aos-duration="200">Детское пространство под открытым небом</li>
+						<li data-aos="flip-up" data-aos-easing="linear" data-aos-duration="200">Спортивная дорожка 2,2 км</li>
 					</ul>
 				</div>
 			</div>
@@ -325,17 +326,408 @@
 			</h3>
 			<div class="content">
 				<div class="left">
-					<div class="cards">
-						<div class="card">
-							<svg width="50" height="50"><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+					<div id="security_cards" class="cards">
+
+						<div class="card" data-aos="flip-left" data-aos-anchor="#security_cards">
+							<img src="./img/img_shared/ico_shield.svg" width="98" height="128" alt="shield">
 							<h5>Охрана 24/7</h5>
 						</div>
+						<div class="card" data-aos="flip-left" data-aos-delay="200" data-aos-anchor="#security_cards">
+							<img src="./img/img_shared/ico_layers.svg" width="118" height="118" alt="layers">
+							<h5>Многоуровневая система защиты</h5>
+						</div>
+						<div class="card" data-aos="flip-left" data-aos-anchor="#security_cards" data-aos-delay="300">
+							<img src="./img/img_shared/ico_shield2.svg" width="126" height="126" alt="shield">
+							<h5>Электронный контроль доступа</h5>
+						</div>
+						<div class="card" data-aos="flip-left" data-aos-delay="100" data-aos-anchor="#security_cards">
+							<img src="./img/img_shared/ico_camera.svg" width="129" height="129" alt="ico_camera">
+							<h5>Камеры видеонаблюдения</h5>
+						</div>
+
 					</div>
 				</div>
 				<div class="right">
-					<img src="./img/thumb_security.png" alt="thumb_security">
+					<img src="./img/thumb_security.png" alt="thumb_security" data-aos="fade-left" data-aos-anchor="#security_cards" data-aos-delay="100">
 				</div>
 			</div>
+		</div>
+	</section>
+
+	<section id="planning" class="planning">
+		<div class="wrapper">
+			<h3>
+				<svg
+					class="angle"
+					width="50"
+					height="50"
+					data-aos="fade-down-right"
+				><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+				Планировки
+				<svg
+					class="angle"
+					width="50"
+					height="50"
+					data-aos="fade-up-left"
+				><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+			</h3>
+			<div id="plan_map" class="plan_map">
+				<img src="./img/plan.png" alt="plan_map">
+				<div class="plan_markers">
+					<svg>
+						<linearGradient id="marker_round" x1="30" y1="42.1875" x2="30" y2="15.8203" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#FFF2C3"/>
+							<stop offset="0.9973" stop-color="#F0FFF4"/>
+						</linearGradient>
+					</svg>
+
+					<button data-aos="fade-down" data-aos-delay="100" data-aos-anchor="#plan_map" class="marker upper" data-marker="1" style="left: 14.4%; top: 9%;">
+						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="marker_1" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</defs>
+							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_1)"/>
+							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
+						</svg>
+						<h5>57 Жемчужина</h5>
+					</button>
+					<button data-aos="fade-down" data-aos-delay="200" data-aos-anchor="#plan_map" class="marker upper" data-marker="2" style="left: 29.6%; top: 20.68%;">
+						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="marker_2" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</defs>
+							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_2)"/>
+							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
+						</svg>
+						<h5>59 Жемчужина</h5>
+					</button>
+					<button data-aos="fade-down" data-aos-delay="300" data-aos-anchor="#plan_map" class="marker lower" data-marker="3" style="left: 33.51%; top: 54.65%;">
+						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="marker_3" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</defs>
+							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_3)"/>
+							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
+						</svg>
+						<h5>61 Жемчужина</h5>
+					</button>
+					<button data-aos="fade-down" data-aos-delay="400" data-aos-anchor="#plan_map" class="marker upper" data-marker="4" style="left: 45.85%; top: 24.96%;">
+						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="marker_4" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</defs>
+							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_4)"/>
+							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
+						</svg>
+						<h5>63 Жемчужина</h5>
+					</button>
+					<button data-aos="fade-down" data-aos-delay="500" data-aos-anchor="#plan_map" class="marker lower" data-marker="5" style="left: 57.43%; top: 57.02%;">
+						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="marker_5" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</defs>
+							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_5)"/>
+							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
+						</svg>
+						<h5>65 Жемчужина</h5>
+					</button>
+					<button data-aos="fade-down" data-aos-delay="600" data-aos-anchor="#plan_map" class="marker upper" data-marker="6" style="left: 61.75%; top: 28.95%;">
+						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="marker_6" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</defs>
+							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_6)"/>
+							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
+						</svg>
+						<h5>67 Жемчужина</h5>
+					</button>
+					<button data-aos="fade-down" data-aos-delay="700" data-aos-anchor="#plan_map" class="marker upper" data-marker="7" style="left: 80.47%; top: 26.59%;">
+						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="marker_7" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</defs>
+							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_7)"/>
+							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
+						</svg>
+						<h5>69 Жемчужина</h5>
+					</button>
+					<button data-aos="fade-down" data-aos-delay="800" data-aos-anchor="#plan_map" class="marker lower" data-marker="8" style="left: 88.65%; top: 54.21%;">
+						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="marker_8" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</defs>
+							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_8)"/>
+							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
+						</svg>
+						<h5>71 Жемчужина</h5>
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="plan_pros">
+		<div class="wrapper">
+
+			<div class="card" data-aos="fade-up">
+				<img width="58" height="58" src="./img/img_shared/ico_height.svg" alt="ico_height">
+				<p>Высокие потолки до 3-х м</p>
+			</div>
+			<div class="card" data-aos="fade-up" data-aos-delay="50">
+				<img width="66" height="66" src="./img/img_shared/ico_app.svg" alt="ico_app">
+				<p>Мобильное приложение KADOR Digital</p>
+			</div>
+			<div class="card" data-aos="fade-up" data-aos-delay="100">
+				<img width="57" height="56" src="./img/img_shared/ico_planning.svg" alt="ico_planning">
+				<p>Более 20 видов планировок</p>
+			</div>
+			<div class="card" data-aos="fade-up" data-aos-delay="150">
+				<img width="58" height="60" src="./img/img_shared/ico_lift.svg" alt="ico_lift">
+				<p>Скоростные лифты</p>
+			</div>
+
+		</div>
+	</section>
+
+	<section id="estate" class="estate">
+		<div class="wrapper">
+			<div class="left">
+				<h3>
+					<svg
+						class="angle"
+						width="50"
+						height="50"
+						data-aos="fade-down-right"
+					><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+					Коммерческая<br>
+					недвижимость
+					<svg
+						class="angle"
+						width="50"
+						height="50"
+						data-aos="fade-up-left"
+					><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+				</h3>
+				<p>Доступны к приобретению
+					коммерческие помещения
+					в Жемчужинах от KADOR City</p>
+					<div class="angles_button">
+						<svg class="angle" width="50" height="50"><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+						<button>Подробнее</button>
+						<svg class="angle" width="50" height="50"><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+					</div>
+			</div>
+			<div class="right">
+				<img src="./img/thumb_estate.png" alt="thumb_estate">
+			</div>
+		</div>
+	</section>
+
+	<section id="structure" class="structure">
+		<div class="wrapper">
+			<div class="left">
+				<div id="map"></div>
+			</div>
+			<div class="right">
+				<h3>
+					<svg
+						class="angle"
+						width="50"
+						height="50"
+						data-aos="fade-down-right"
+					><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+					Инфраструктура
+					<svg
+						class="angle"
+						width="50"
+						height="50"
+						data-aos="fade-up-left"
+					><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+				</h3>
+				<div class="places">
+					<ul class="types">
+						<li class="active" data-type="0">
+							<svg class="gradient">
+								<linearGradient id="type_1_1" x1="30.5" y1="54.3066" x2="30.5" y2="15.5137" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#CCDDFA"/>
+									<stop offset="1" stop-color="#192944"/>
+								</linearGradient>
+								<linearGradient id="type_1_2" x1="30.5" y1="50.7324" x2="30.5" y2="0.693359" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#CCDDFA"/>
+									<stop offset="1" stop-color="#192944"/>
+								</linearGradient>
+							</svg>
+							<svg width="61" height="55" viewBox="0 0 61 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M7.26758 33.5196L10.8418 36.2549V42.1057C10.8418 43.0935 11.6411 43.8928 12.6289 43.8928C13.6167 43.8928 14.416 43.0935 14.416 42.1057V36.2549L17.9902 33.1246V24.6657L21.0408 21.6151L18.5137 15.5138L12.6289 17.8244L6.74396 15.5137L4.09772 21.615L7.26758 24.6657V33.5196ZM59.2129 50.7324H56.7433L53.8516 44.9487V38.2226C53.8516 37.2348 53.0522 36.4355 52.0645 36.4355C51.0767 36.4355 50.2773 37.2348 50.2773 38.2226V45.371C50.2773 45.6485 50.3419 45.9225 50.4658 46.1703L52.7469 50.7324H33.3918L35.6728 46.1703C35.7968 45.9225 35.8613 45.6485 35.8613 45.371V38.2226C35.8613 37.2348 35.062 36.4355 34.0742 36.4355C33.0864 36.4355 32.2871 37.2348 32.2871 38.2226V44.9487L29.3953 50.7324H17.9902L14.1714 48.9452H6.55273L3.57422 50.7324H1.78711C0.799314 50.7324 0 51.5317 0 52.5195C0 53.5073 0.799314 54.3066 1.78711 54.3066H59.2129C60.2007 54.3066 61 53.5073 61 52.5195C61 51.5317 60.2007 50.7324 59.2129 50.7324Z" fill="url(#type_1_1)"/>
+								<path d="M17.9902 43.584H15.875C15.1366 41.5065 13.1728 40.0098 10.8418 40.0098C8.51081 40.0098 6.54702 41.5065 5.80858 43.584H3.57422C1.60018 43.584 0 45.1842 0 47.1582C0 49.1322 1.60018 50.7324 3.57422 50.7324H17.9902C19.9643 50.7324 21.5645 49.1322 21.5645 47.1582C21.5645 45.1842 19.9643 43.584 17.9902 43.584ZM10.8418 36.2549V24.6658L7.7912 21.6152C7.09316 20.9171 7.09316 19.7861 7.7912 19.0881C8.48925 18.39 9.62025 18.39 10.3183 19.0881L12.6289 21.3987L14.9396 19.088C15.6377 18.3899 16.7687 18.3899 17.4667 19.088C18.1648 19.786 18.1648 20.917 17.4667 21.615L14.416 24.6658V36.2549C20.4624 35.3784 25.1387 30.211 25.1387 23.9258C25.1387 21.2381 24.2818 18.6744 22.6622 16.5086C21.9537 15.5609 21.5645 14.3917 21.5645 13.2031C21.5645 8.90811 18.0845 0.693359 12.6289 0.693359C7.17334 0.693359 3.57422 8.9081 3.57422 13.2118C3.57422 14.4056 3.1938 15.547 2.47646 16.5086C0.856859 18.6744 0 21.2381 0 23.9258C0 30.211 4.79541 35.3784 10.8418 36.2549ZM59.2129 43.584H26.9258C25.938 43.584 25.1387 44.3833 25.1387 45.3711C25.1387 46.3589 25.938 47.1582 26.9258 47.1582H59.2129C60.2007 47.1582 61 46.3589 61 45.3711C61 44.3833 60.2007 43.584 59.2129 43.584ZM59.2129 29.2871H26.9258C25.938 29.2871 25.1387 30.0864 25.1387 31.0742V38.2227C25.1387 39.2105 25.938 40.0098 26.9258 40.0098H59.2129C60.2007 40.0098 61 39.2105 61 38.2227V31.0742C61 30.0864 60.2007 29.2871 59.2129 29.2871Z" fill="url(#type_1_2)"/>
+							</svg>
+							<span>Парки</span>
+						</li>
+						<li data-type="1">
+							<svg class="gradient">
+								<linearGradient id="type_2_1" x1="27.5" y1="60.9999" x2="27.5" y2="14.5352" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#CCDDFA"/>
+									<stop offset="1" stop-color="#192944"/>
+								</linearGradient>
+								<linearGradient id="type_2_2" x1="27.5" y1="53.8516" x2="27.5" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#CCDDFA"/>
+									<stop offset="1" stop-color="#192944"/>
+								</linearGradient>
+							</svg>
+							<svg width="55" height="61" viewBox="0 0 55 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M52.5195 14.5352H38.2227C38.0307 14.5352 37.8405 14.5666 37.6572 14.6276L27.5 18.0133L17.3428 14.6276C17.1595 14.5666 16.9693 14.5352 16.7773 14.5352H2.48047C1.49267 14.5352 0.693359 15.3345 0.693359 16.3223V44.916C0.693359 45.9038 1.49267 46.7031 2.48047 46.7031H19.7562C19.7501 46.7093 19.7432 46.7143 19.7373 46.7205L13.0897 53.6892C12.7075 54.0906 12.533 54.6455 12.6167 55.1936C12.7005 55.7416 13.0338 56.2181 13.5173 56.4867L21.2731 60.7765C21.7158 61.0208 22.2206 61.0587 22.6693 60.9196C23.1335 60.7747 23.5193 60.4484 23.7374 60.0121L27.4198 52.649C27.472 52.5448 27.4695 52.4288 27.5001 52.3187C27.5306 52.4289 27.5282 52.5449 27.5804 52.649L31.2628 60.0121C31.481 60.4484 31.8666 60.7747 32.3309 60.9196C32.7796 61.0586 33.2844 61.0208 33.7271 60.7765L41.4829 56.4867C41.9664 56.2179 42.2996 55.7415 42.3835 55.1936C42.4673 54.6455 42.2927 54.0906 41.9105 53.6892L35.263 46.7205C35.2572 46.7144 35.2511 46.709 35.2452 46.7031H52.5195C53.5073 46.7031 54.3066 45.9038 54.3066 44.916V16.3223C54.3066 15.3345 53.5073 14.5352 52.5195 14.5352ZM21.545 46.2441C21.9087 45.9172 22.1387 45.4443 22.1387 44.916C22.1387 45.7311 22.3223 46.5038 22.6491 47.1961C22.6461 47.1899 22.6426 47.184 22.6397 47.1778C22.4219 46.7243 22.0214 46.3884 21.545 46.2441ZM27.5593 51.0941C27.5186 51.1815 27.526 51.2784 27.5 51.37C27.474 51.2784 27.4814 51.1815 27.4407 51.0941C27.2378 50.6606 26.8733 50.3301 26.4304 50.1699C26.7761 50.2402 27.1339 50.2772 27.5001 50.2772C27.8664 50.2772 28.224 50.2401 28.5699 50.1699C28.1267 50.3301 27.7623 50.6607 27.5593 51.0941ZM32.3605 47.1778C32.3575 47.184 32.354 47.1899 32.351 47.196C32.6777 46.5037 32.8613 45.7311 32.8613 44.916C32.8613 45.4443 33.0913 45.9172 33.455 46.2441C32.9786 46.3884 32.5782 46.7243 32.3605 47.1778Z" fill="url(#type_2_1)"/>
+								<path d="M48.9453 0H6.05469C5.06689 0 4.26758 0.799314 4.26758 1.78711C4.26758 2.7749 5.06689 3.57422 6.05469 3.57422H14.9902V16.3223C14.9902 17.0919 15.4824 17.7744 16.2119 18.0169L26.9346 21.5911C27.3021 21.7136 27.6936 21.7152 28.0654 21.5911L38.7881 18.0169C39.5176 17.7744 40.0098 17.0919 40.0098 16.3223V3.57422H48.9453C49.9331 3.57422 50.7324 2.7749 50.7324 1.78711C50.7324 0.799314 49.9331 0 48.9453 0ZM16.7773 32.4062H9.62891C8.64111 32.4062 7.8418 33.2056 7.8418 34.1934C7.8418 35.1812 8.64111 35.9805 9.62891 35.9805H16.7773C17.7651 35.9805 18.5645 35.1812 18.5645 34.1934C18.5645 33.2056 17.7651 32.4062 16.7773 32.4062ZM45.3711 25.2578H9.62891C8.64111 25.2578 7.8418 26.0571 7.8418 27.0449C7.8418 28.0327 8.64111 28.832 9.62891 28.832H45.3711C46.3589 28.832 47.1582 28.0327 47.1582 27.0449C47.1582 26.0571 46.3589 25.2578 45.3711 25.2578ZM45.3711 32.4062H38.2227C37.2349 32.4062 36.4355 33.2056 36.4355 34.1934C36.4355 35.1812 37.2349 35.9805 38.2227 35.9805H45.3711C46.3589 35.9805 47.1582 35.1812 47.1582 34.1934C47.1582 33.2056 46.3589 32.4062 45.3711 32.4062ZM27.5 35.9805C22.5676 35.9805 18.5645 39.9836 18.5645 44.916C18.5645 49.8484 22.5676 53.8516 27.5 53.8516C32.4324 53.8516 36.4355 49.8484 36.4355 44.916C36.4355 39.9836 32.4324 35.9805 27.5 35.9805ZM27.5 46.7031C26.4991 46.7031 25.7129 45.9167 25.7129 44.916C25.7129 43.9151 26.4991 43.1289 27.5 43.1289C28.5009 43.1289 29.2871 43.9151 29.2871 44.916C29.2871 45.9167 28.5009 46.7031 27.5 46.7031Z" fill="url(#type_2_2)"/>
+							</svg>
+							<span>Университеты</span>
+						</li>
+						<li data-type="2">
+							<svg class="gradient">
+								<linearGradient id="type_3_1" x1="28.7129" y1="57.4258" x2="28.7129" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+								<linearGradient id="type_3_2" x1="34.0742" y1="61" x2="34.0742" y2="17.8711" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</svg>
+							<svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M53.7324 25.0195C52.7446 25.0195 51.9453 25.8188 51.9453 26.8066C51.9453 30.5816 51.4915 35.2431 50.5963 40.6602C49.6975 46.0949 45.0045 50.0391 39.4355 50.0391C38.4478 50.0391 37.6484 50.8384 37.6484 51.8262C37.6484 52.814 38.4478 53.6133 39.4355 53.6133C46.762 53.6133 52.9384 48.4108 54.1217 41.2431C55.0501 35.634 55.5195 30.777 55.5195 26.8066C55.5195 25.8188 54.7202 25.0195 53.7324 25.0195ZM48.3711 23.2324C48.3711 10.4224 37.9487 0 25.1387 0C12.3287 0 1.90625 10.4224 1.90625 23.2324C1.90625 36.0424 12.3287 46.4648 25.1387 46.4648C37.9487 46.4648 48.3711 36.0424 48.3711 23.2324ZM32.2871 50.2773C30.315 50.2773 28.7129 51.8812 28.7129 53.8516C28.7129 55.8219 30.315 57.4258 32.2871 57.4258C34.2592 57.4258 35.8613 55.8219 35.8613 53.8516C35.8613 51.8812 34.2592 50.2773 32.2871 50.2773ZM17.9902 50.2773C16.0181 50.2773 14.416 51.8812 14.416 53.8516C14.416 55.8219 16.0181 57.4258 17.9902 57.4258C19.9624 57.4258 21.5645 55.8219 21.5645 53.8516C21.5645 51.8812 19.9624 50.2773 17.9902 50.2773Z" fill="url(#type_3_1)"/>
+								<path d="M25.1387 28.5938C28.095 28.5938 30.5 26.1888 30.5 23.2324C30.5 20.2761 28.095 17.8711 25.1387 17.8711C22.1823 17.8711 19.7773 20.2761 19.7773 23.2324C19.7773 26.1888 22.1823 28.5938 25.1387 28.5938ZM53.7324 17.8711C50.7761 17.8711 48.3711 20.2761 48.3711 23.2324C48.3711 26.1888 50.7761 28.5938 53.7324 28.5938C56.6888 28.5938 59.0938 26.1888 59.0938 23.2324C59.0938 20.2761 56.6888 17.8711 53.7324 17.8711ZM39.4355 46.4648H10.8418C9.854 46.4648 9.05469 47.2642 9.05469 48.252V59.2129C9.05469 60.2007 9.854 61 10.8418 61H39.4355C40.4233 61 41.2227 60.2007 41.2227 59.2129V48.252C41.2227 47.2642 40.4233 46.4648 39.4355 46.4648ZM17.9902 55.6387C17.0033 55.6387 16.2031 54.8385 16.2031 53.8516C16.2031 52.8644 17.0033 52.0645 17.9902 52.0645C18.9772 52.0645 19.7773 52.8644 19.7773 53.8516C19.7773 54.8385 18.9772 55.6387 17.9902 55.6387ZM32.2871 55.6387C31.3001 55.6387 30.5 54.8385 30.5 53.8516C30.5 52.8644 31.3001 52.0645 32.2871 52.0645C33.2741 52.0645 34.0742 52.8644 34.0742 53.8516C34.0742 54.8385 33.2741 55.6387 32.2871 55.6387Z" fill="url(#type_3_2)"/>
+							</svg>
+							<span>Школы</span>
+						</li>
+						<li data-type="3">
+							<svg class="gradient">
+								<linearGradient id="type_4_1" x1="30.5" y1="61" x2="30.5" y2="1.78711" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+								<linearGradient id="type_4_2" x1="30.5" y1="57.4258" x2="30.5" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</svg>
+							<svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M41.8184 1.78711V42.5332C41.8184 43.5202 41.0182 44.3203 40.0312 44.3203C39.0443 44.3203 38.2441 43.5202 38.2441 42.5332V1.78711H41.8184ZM19.1816 42.5332C19.1816 43.5202 19.9818 44.3203 20.9688 44.3203C21.9557 44.3203 22.7559 43.5202 22.7559 42.5332V1.78711H19.1816V42.5332ZM61 59.2129C61 58.2259 60.1999 57.4258 59.2129 57.4258H49.6816C48.6947 57.4258 47.8945 58.2259 47.8945 59.2129C47.8945 60.1999 48.6947 61 49.6816 61H59.2129C60.1999 61 61 60.1999 61 59.2129ZM13.1055 59.2129C13.1055 58.2259 12.3053 57.4258 11.3184 57.4258H1.78711C0.800148 57.4258 0 58.2259 0 59.2129C0 60.1999 0.800148 61 1.78711 61H11.3184C12.3053 61 13.1055 60.1999 13.1055 59.2129Z" fill="url(#type_4_1)"/>
+								<path d="M42.4141 49.6816H18.586C17.599 49.6816 16.7989 48.8815 16.7989 47.8945V44.916C16.7989 42.6167 18.6695 40.7461 20.9688 40.7461H40.0313C42.3306 40.7461 44.2012 42.6167 44.2012 44.916V47.8945C44.2012 48.8815 43.4011 49.6816 42.4141 49.6816ZM56.0587 57.4258L50.7112 5.87661C50.3648 2.53734 47.5506 0 44.1935 0H16.8066C13.4494 0 10.6353 2.53734 10.2889 5.87661L4.94141 57.4258H8.53481L13.844 6.24535C14.0015 4.7275 15.2807 3.57422 16.8066 3.57422H44.1935C45.7194 3.57422 46.9986 4.7275 47.1561 6.24535L52.4653 57.4258H56.0587Z" fill="url(#type_4_2)"/>
+							</svg>
+							<span>Десткие сады</span>
+						</li>
+						<li data-type="4">
+							<svg class="gradient">
+								<linearGradient id="type_5_1" x1="31" y1="1.5" x2="31" y2="66" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+								<linearGradient id="type_5_2" x1="30.5" y1="57.3066" x2="30.5" y2="7.26758" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#192944"/>
+								<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</svg>
+							<svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M46.7031 7.26758H48.4902C49.4911 7.26758 50.2773 6.48137 50.2773 5.48047C50.2773 4.47957 49.4911 3.69336 48.4902 3.69336H12.5098C11.5089 3.69336 10.7227 4.47957 10.7227 5.48047C10.7227 6.48137 11.5089 7.26758 12.5098 7.26758H14.2969L22.3984 9.05469H19.6582V37.6484H28.7129L21.5645 44.7969L25.1387 57.3066H35.8613L39.4355 44.7969L32.2871 37.6484H41.2227V9.05469H38.6016L46.7031 7.26758ZM59.2129 14.416H44.916C43.9291 14.416 43.1289 15.2162 43.1289 16.2031V53.7324C43.1289 55.7065 44.7291 57.3066 46.7031 57.3066H59.2129C60.1999 57.3066 61 56.5065 61 55.5195V16.2031C61 15.2162 60.1999 14.416 59.2129 14.416ZM16.084 14.416H1.78711C0.800148 14.416 0 15.2162 0 16.2031V55.5195C0 56.5065 0.800148 57.3066 1.78711 57.3066H14.2969C16.2709 57.3066 17.8711 55.7065 17.8711 53.7324V16.2031C17.8711 15.2162 17.0709 14.416 16.084 14.416Z" fill="url(#type_5_1)"/>
+								<path d="M14.2969 57.3066H25.1387V44.7969C25.1387 41.8302 27.5333 39.4355 30.5 39.4355C33.4667 39.4355 35.8613 41.8302 35.8613 44.7969V57.3066H46.7031V7.26758H14.2969V57.3066ZM26.9258 14.416H28.7129V12.6289C28.7129 11.628 29.4991 10.8418 30.5 10.8418C31.5009 10.8418 32.2871 11.628 32.2871 12.6289V14.416H34.0742C35.0751 14.416 35.8613 15.2022 35.8613 16.2031C35.8613 17.204 35.0751 17.9902 34.0742 17.9902H32.2871V19.7773C32.2871 20.7782 31.5009 21.5645 30.5 21.5645C29.4991 21.5645 28.7129 20.7782 28.7129 19.7773V17.9902H26.9258C25.9249 17.9902 25.1387 17.204 25.1387 16.2031C25.1387 15.2022 25.9249 14.416 26.9258 14.416ZM23.3516 25.1387H37.6484C38.6493 25.1387 39.4355 25.9249 39.4355 26.9258C39.4355 27.9267 38.6493 28.7129 37.6484 28.7129H23.3516C22.3507 28.7129 21.5645 27.9267 21.5645 26.9258C21.5645 25.9249 22.3507 25.1387 23.3516 25.1387ZM23.3516 32.2871H37.6484C38.6493 32.2871 39.4355 33.0733 39.4355 34.0742C39.4355 35.0751 38.6493 35.8613 37.6484 35.8613H23.3516C22.3507 35.8613 21.5645 35.0751 21.5645 34.0742C21.5645 33.0733 22.3507 32.2871 23.3516 32.2871ZM7.14844 21.5645C6.16064 21.5645 5.36133 22.3638 5.36133 23.3516V26.9258C5.36133 27.9136 6.16064 28.7129 7.14844 28.7129C8.13623 28.7129 8.93555 27.9136 8.93555 26.9258V23.3516C8.93555 22.3638 8.13623 21.5645 7.14844 21.5645ZM7.14844 32.2871C6.16064 32.2871 5.36133 33.0864 5.36133 34.0742V37.6484C5.36133 38.6362 6.16064 39.4355 7.14844 39.4355C8.13623 39.4355 8.93555 38.6362 8.93555 37.6484V34.0742C8.93555 33.0864 8.13623 32.2871 7.14844 32.2871ZM7.14844 43.0098C6.16064 43.0098 5.36133 43.8091 5.36133 44.7969V48.3711C5.36133 49.3589 6.16064 50.1582 7.14844 50.1582C8.13623 50.1582 8.93555 49.3589 8.93555 48.3711V44.7969C8.93555 43.8091 8.13623 43.0098 7.14844 43.0098ZM53.8516 21.5645C52.8638 21.5645 52.0645 22.3638 52.0645 23.3516V26.9258C52.0645 27.9136 52.8638 28.7129 53.8516 28.7129C54.8394 28.7129 55.6387 27.9136 55.6387 26.9258V23.3516C55.6387 22.3638 54.8394 21.5645 53.8516 21.5645ZM53.8516 32.2871C52.8638 32.2871 52.0645 33.0864 52.0645 34.0742V37.6484C52.0645 38.6362 52.8638 39.4355 53.8516 39.4355C54.8394 39.4355 55.6387 38.6362 55.6387 37.6484V34.0742C55.6387 33.0864 54.8394 32.2871 53.8516 32.2871ZM53.8516 43.0098C52.8638 43.0098 52.0645 43.8091 52.0645 44.7969V48.3711C52.0645 49.3589 52.8638 50.1582 53.8516 50.1582C54.8394 50.1582 55.6387 49.3589 55.6387 48.3711V44.7969C55.6387 43.8091 54.8394 43.0098 53.8516 43.0098Z" fill="url(#type_5_2)"/>
+							</svg>
+							<span>Больницы</span>
+						</li>
+					</ul>
+					<ul class="addresses">
+						<li class="active" data-type="0">
+							<div class="item">Парк Победы</div>
+							<div class="item">Парк Космонавтов </div>
+							<div class="item">Парк Обласной рады</div>
+						</li>
+						<li data-type="1">
+							<div class="item">Университет Победы</div>
+							<div class="item">Университет Космонавтов </div>
+							<div class="item">Университет Обласной рады</div>
+						</li>
+						<li data-type="2">
+							<div class="item">Школа Победы</div>
+							<div class="item">Школа Космонавтов </div>
+						</li>
+						<li data-type="3">
+							<div class="item">Детский сад Обласной рады</div>
+						</li>
+						<li data-type="4">
+							<div class="item">Больница Победы</div>
+							<div class="item">Больница Космонавтов </div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="gallery" class="gallery">
+		<div class="wrapper">
+
+			<h3>
+				<svg
+					class="angle"
+					width="50"
+					height="50"
+					data-aos="fade-down-right"
+				><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+				Галерея
+				<svg
+					class="angle"
+					width="50"
+					height="50"
+					data-aos="fade-up-left"
+				><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+			</h3>
+
+			<div class="slider">
+				<button class="slick-prev hs1">
+					<svg width="26" height="44">
+						<use class="arrow_left" xlink:href="./img/icons.svg#arrow_left"></use>
+					</svg>
+				</button>
+
+				<div class="toSlick" data-type="hs1" data-mobile="false">
+					<div class="slide"><img src="./img/gallery_1.png" alt="gallery_image"></div>
+					<div class="slide"><img src="./img/gallery_2.png" alt="gallery_image"></div>
+					<div class="slide"><img src="./img/gallery_3.png" alt="gallery_image"></div>
+					<div class="slide"><img src="./img/gallery_4.png" alt="gallery_image"></div>
+					<div class="slide"><img src="./img/gallery_1.png" alt="gallery_image"></div>
+					<div class="slide"><img src="./img/gallery_2.png" alt="gallery_image"></div>
+					<div class="slide"><img src="./img/gallery_3.png" alt="gallery_image"></div>
+					<div class="slide"><img src="./img/gallery_4.png" alt="gallery_image"></div>
+				</div>
+
+				<button class="slick-next hs1">
+					<svg width="26" height="44">
+						<use class="arrow_right" xlink:href="./img/icons.svg#arrow_right"></use>
+					</svg>
+				</button>
+			</div>
+
 		</div>
 	</section>
 	<!-- Content end -->
@@ -438,12 +830,117 @@
 	<script src="./js/libs/jquery-3.5.1.min.js"></script>
 	<script src="./js/libs/slick.min.js"></script>
 	<script src="./js/libs/aos.js"></script>
-	<script src="./js/libs/jquery.maskedinput.min.js"></script>
-
-	<!-- Custom JS -->
-	<script src="./js/main.js"></script>
+	<script src="./js/libs/jquery.maskedinput.min.js" defer></script>
 
 	<!-- Google Maps API -->
+	<script>
+		function initMap() {
+		const coordinates = [
+			[
+				[50.42972286659074, 30.522952928933808],
+				[50.439973682133164, 30.526643719749785],
+				[50.437185716348836, 30.506816829931196]
+			],
+			[
+				[50.426743052042234, 30.538402804784187],
+				[50.43210135599484, 30.519605883267864],
+				[50.44155892277628, 30.52406907924434]
+			],
+			[
+				[50.41815756652206, 30.516687639744777],
+				[50.427453882348004, 30.50098062313525]
+			],
+			[
+				[50.43478028058501, 30.538145312708618]
+			],
+			[
+				[50.437677722242995, 30.515486010058808],
+				[50.437513720846496, 30.52243829609909]
+			],
+		];
+
+		const center = {
+			lat: coordinates[0][0][0],
+			lng: coordinates[0][1][1]
+		};
+
+		const map = new google.maps.Map(document.querySelector("#map"), {
+			center: center,
+			zoom: 14,
+			disableDefaultUI: false,
+			scrollwheel: false,
+		});
+
+		const markers = [];
+
+		for (let i = 0; i < coordinates.length; i++) {
+			markers.push([]);
+
+			for (let j = 0; j < coordinates[i].length; j++) {
+				const lat = coordinates[i][j][0];
+				const lng = coordinates[i][j][1];
+
+				const marker = new google.maps.Marker({
+					position: {
+						lat: lat,
+						lng: lng
+					},
+					map: map,
+					label: {
+						text: `0${j + 1}`,
+						fontSize: "24px",
+						fontFamily: 'Gilroy',
+						className: "marker_label"
+					},
+					icon: {
+						url: './img/img_shared/map_marker.svg',
+						labelOrigin: new google.maps.Point(15,-15)
+					},
+					animation: google.maps.Animation.DROP
+				});
+
+				marker.setVisible(false);
+
+				markers[i].push(marker);
+			}
+		}
+
+		// Markers init
+		for (let k = 0; k < markers[0].length; k++) {
+			markers[0][k].setVisible(true);
+		}
+
+		// Toggle places
+		(function() {
+			const placesTypes = document.querySelectorAll('section.structure .types li');
+			const prosAddresses = document.querySelectorAll('section.structure .addresses li');
+
+			// Init
+			let curPlace = 0;
+
+			for (let i = 0; i < placesTypes.length; i++) {
+				placesTypes[i].addEventListener('mouseover', (e) => {
+					placesTypes[curPlace].classList.remove('active');
+					prosAddresses[curPlace].classList.remove('active');
+					for (let j = 0; j < markers[curPlace].length; j++) {
+						markers[curPlace][j].setVisible(false);
+					}
+
+					curPlace = placesTypes[i].getAttribute('data-type');
+					placesTypes[curPlace].classList.add('active');
+					prosAddresses[curPlace].classList.add('active');
+					for (let j = 0; j < markers[curPlace].length; j++) {
+						markers[curPlace][j].setVisible(true);
+					}
+				}, true);
+			}
+		})();
+	}
+	</script>
+
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZmmcpk7hgCJk6xk54yD9G-A0-HaccLuQ&callback=initMap" defer></script>
+
+	<!-- Custom JS -->
+	<script src="./js/main.js" defer></script>
 </body>
 </html>

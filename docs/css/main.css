@@ -1,11 +1,5 @@
 @charset "UTF-8";
 /* __________________ Variables __________________ */
-/* __________________ Icons gradient __________________ */
-.gradient { fill: url(#gradient); --grad-col1: #CCDDFA; --grad-col2: #192944; }
-
-.gradient:hover, .gradient.active { --grad-col1: #FFDE00; --grad-col2: #FD5900; }
-
-/* __________________ Mixins __________________ */
 /* __________________ Reset styles __________________ */
 * { margin: 0; padding: 0; border: 0; font-size: 100%; color: inherit; box-sizing: border-box; line-height: inherit; line-height: 1.08; }
 
@@ -76,6 +70,17 @@ button, [type=submit], .button { -moz-appearance: none; -webkit-appearance: none
 [data-aos="draw_building"] { stroke-dasharray: 155; stroke-dashoffset: 1400; stroke: #00000000; }
 
 [data-aos="draw_building"].aos-animate { stroke-dashoffset: 1250; stroke: #192944; }
+
+/* __________________ Slick Classes __________________ */
+.slick-arrow { background: none; transition: all 0.2s linear; }
+
+.slick-arrow svg { stroke: #000000; }
+
+.slick-arrow.slick-disabled { opacity: 0; visibility: hidden; }
+
+.slick-arrow:hover svg { stroke: #6f9ff1; }
+
+.slick-slide { display: inline-flex; }
 
 @keyframes fadeIn { 0% { opacity: 0; }
   100% { opacity: 1; } }
@@ -314,8 +319,6 @@ section.pros .left .gallery img.active { opacity: 1; visibility: visible; }
 
 section.pros .left .watch { font-size: 18px; color: #213657; background-color: #CCDDFA; padding: 30px 50px; display: flex; align-items: center; justify-content: center; gap: 15px; margin-left: 25vw; }
 
-section.pros .left .watch:hover { background-color: #192944; color: #F6F9FF; }
-
 section.pros .right { width: 50%; }
 
 section.pros .right ul li { list-style-position: inside; font-size: 24px; line-height: 1.3; padding: 20px 100px 20px 24px; cursor: default; position: relative; transition: all 0.2s linear; }
@@ -324,7 +327,7 @@ section.pros .right ul li::before { content: '•'; margin-right: 12px; transiti
 
 section.pros .right ul li::after { content: ''; position: absolute; background-color: #CCDDFA; height: 7px; right: 99%; top: 50%; z-index: 30; transition: all 0.2s ease-in; width: 0; opacity: 0; visibility: hidden; }
 
-section.pros .right ul li:hover, section.pros .right ul li.active { background-color: #CCDDFA; color: #213657; font-weight: bold; }
+section.pros .right ul li:hover, section.pros .right ul li.active { background-color: #CCDDFA; color: #213657; }
 
 section.pros .right ul li:hover::before, section.pros .right ul li.active::before { color: #00000000; margin-right: 0; }
 
@@ -332,17 +335,241 @@ section.pros .right ul li:hover::after, section.pros .right ul li.active::after 
 
 section.security { padding: 95px 0; overflow: visible; }
 
-section.security::before { content: ''; position: absolute; z-index: 0; top: 0; left: 0; background-color: #CCDDFA; width: 100%; height: 850px; }
+section.security::before { content: ''; position: absolute; z-index: 0; top: 0; left: 0; background-color: #CCDDFA; width: 100%; height: 890px; }
 
 section.security .figure_house { position: absolute; top: 0; right: 0; transform: translate(0, -55%); transition: all 1.25s ease-in; }
 
 section.security .content { margin-top: 60px; display: flex; gap: 125px; }
 
-section.security .left { width: 47%; padding-left: 40px; }
+section.security .left { width: 39%; padding-left: 40px; }
 
-section.security .right { width: 53%; height: 730px; padding-right: 10px; position: relative; overflow: hidden; }
+section.security .left .cards { display: flex; flex-wrap: wrap; gap: 24px; }
 
-section.security .right img { position: absolute; min-width: 100%; min-height: 100%; width: auto; height: auto; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+section.security .left .cards .card { width: calc( 50% - 12px); height: 274px; background-color: #f6f9ff; padding: 40px 50px; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; position: relative; z-index: 10; }
+
+section.security .left .cards .card img { width: auto; height: auto; }
+
+section.security .left .cards .card h5 { margin-top: 24px; text-align: center; font-size: 18px; font-weight: 600; line-height: 1.3; color: #213657; text-transform: none; }
+
+section.security .right { width: 61%; height: 730px; margin-top: 40px; padding-right: 10px; position: relative; z-index: 50; overflow: hidden; }
+
+section.security .right img { position: absolute; min-width: 100%; min-height: 100%; width: auto; height: auto; top: auto; left: auto; }
+
+section.planning { padding: 30px 0 0; }
+
+section.planning .wrapper h3 { margin-left: 36px; }
+
+section.planning .wrapper .plan_map { margin-top: 80px; position: relative; }
+
+section.planning .wrapper .plan_map .plan_markers { position: absolute; z-index: 10; top: 0; left: 0; width: 100%; height: 100%; }
+
+section.planning .wrapper .plan_map .plan_markers .marker { background-color: #00000000; padding: 0; position: absolute; z-index: 15; }
+
+section.planning .wrapper .plan_map .plan_markers .marker svg { width: auto; height: auto; }
+
+section.planning .wrapper .plan_map .plan_markers .marker svg stop { transition: all 0.6s ease; }
+
+section.planning .wrapper .plan_map .plan_markers .marker h5 { padding: 16px 30px; font-size: 20px; font-weight: bold; text-transform: none; line-height: 1.3; color: #ffffff; background-color: rgba(25, 41, 68, 0.5); white-space: nowrap; position: absolute; left: 50%; transition: all 0.5s ease; opacity: 0; visibility: hidden; }
+
+section.planning .wrapper .plan_map .plan_markers .marker.upper h5 { bottom: 0; transform: translate(-50%, 0); }
+
+section.planning .wrapper .plan_map .plan_markers .marker.upper:hover h5 { opacity: 1; visibility: visible; transform: translate(-50%, calc( 100% + 18px)); }
+
+section.planning .wrapper .plan_map .plan_markers .marker.lower h5 { top: 0; transform: translate(-50%, 0); }
+
+section.planning .wrapper .plan_map .plan_markers .marker.lower:hover h5 { opacity: 1; visibility: visible; transform: translate(-50%, calc( -100% - 18px)); }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_1 stop:first-child { stop-color: #FFDE00; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_1 stop:last-child { stop-color: #FD5900; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_2 stop:first-child { stop-color: #FFDE00; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_2 stop:last-child { stop-color: #FD5900; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_3 stop:first-child { stop-color: #FFDE00; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_3 stop:last-child { stop-color: #FD5900; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_4 stop:first-child { stop-color: #FFDE00; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_4 stop:last-child { stop-color: #FD5900; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_5 stop:first-child { stop-color: #FFDE00; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_5 stop:last-child { stop-color: #FD5900; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_6 stop:first-child { stop-color: #FFDE00; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_6 stop:last-child { stop-color: #FD5900; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_7 stop:first-child { stop-color: #FFDE00; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_7 stop:last-child { stop-color: #FD5900; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_8 stop:first-child { stop-color: #FFDE00; }
+
+section.planning .wrapper .plan_map .plan_markers .marker:hover #marker_8 stop:last-child { stop-color: #FD5900; }
+
+section.plan_pros { margin-top: -110px; z-index: 3; padding: 140px 0 50px; background-color: #192944; color: #ffffff; }
+
+section.plan_pros .wrapper { display: flex; align-items: center; justify-content: space-between; gap: 100px; }
+
+section.plan_pros .card { width: 25%; max-width: 287px; display: inline-flex; align-items: center; gap: 20px; }
+
+section.plan_pros .card img { width: auto; height: auto; }
+
+section.plan_pros .card p { font-size: 24px; font-weight: 500; line-height: 1.3; }
+
+section.estate { padding: 150px 0 80px; }
+
+section.estate::before { content: ''; position: absolute; z-index: 0; top: 0; right: 0; background-color: #CCDDFA; width: 24%; height: 100%; }
+
+section.estate .wrapper { display: flex; gap: 125px; }
+
+section.estate .left { width: 39%; padding-top: 100px; padding-left: 40px; }
+
+section.estate .left h3 { text-align: left; margin: 0; color: #132644; }
+
+section.estate .left p { margin-top: 30px; font-size: 36px; line-height: 1.3; color: #192944; }
+
+section.estate .left .angles_button { margin-top: 70px; }
+
+section.estate .left .angles_button svg { stroke: #CCDDFA; }
+
+section.estate .left .angles_button button { color: #213657; background-color: #CCDDFA; }
+
+section.estate .left .angles_button:hover button { color: #ffffff; background-color: #192944; }
+
+section.estate .left .angles_button:hover .angle { stroke: #192944; }
+
+section.estate .right { width: 61%; height: 620px; position: relative; overflow: hidden; }
+
+section.estate .right img { position: absolute; min-width: 100%; min-height: 100%; width: auto; height: auto; top: auto; left: auto; }
+
+section.structure { padding: 90px 0; }
+
+section.structure::before { content: ''; position: absolute; z-index: 0; top: 0; left: 0; background-color: #192944; width: 23%; height: 100%; }
+
+section.structure .wrapper { display: flex; gap: 45px; }
+
+section.structure .left { width: 50%; height: 667px; }
+
+section.structure .left #map { width: 100%; height: 100%; }
+
+section.structure .left .map_marker { transition: all 0.2s linear; opacity: 0; visibility: hidden; }
+
+section.structure .right { width: 50%; }
+
+section.structure .right .places { margin-top: 50px; display: flex; }
+
+section.structure .right .places .types { width: 50%; }
+
+section.structure .right .places .types .gradient { position: absolute; opacity: 0; visibility: hidden; }
+
+section.structure .right .places .types li { width: 100%; padding: 24px 40px; height: 100px; display: flex; align-items: center; gap: 30px; transition: all 0.3s linear; border: 1px solid #00000000; }
+
+section.structure .right .places .types li svg { width: auto; height: auto; }
+
+section.structure .right .places .types li svg stop { transition: all 0.3s linear; }
+
+section.structure .right .places .types li span { font-size: 24px; line-height: 1.3; user-select: none; }
+
+section.structure .right .places .types li:hover, section.structure .right .places .types li.active { border-color: #CCDDFA; background-color: #ffffff; }
+
+section.structure .right .places .types li:hover #type_1_1 stop:first-child, section.structure .right .places .types li.active #type_1_1 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_1_1 stop:last-child, section.structure .right .places .types li.active #type_1_1 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_1_2 stop:first-child, section.structure .right .places .types li.active #type_1_2 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_1_2 stop:last-child, section.structure .right .places .types li.active #type_1_2 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_2_1 stop:first-child, section.structure .right .places .types li.active #type_2_1 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_2_1 stop:last-child, section.structure .right .places .types li.active #type_2_1 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_2_2 stop:first-child, section.structure .right .places .types li.active #type_2_2 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_2_2 stop:last-child, section.structure .right .places .types li.active #type_2_2 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_3_1 stop:first-child, section.structure .right .places .types li.active #type_3_1 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_3_1 stop:last-child, section.structure .right .places .types li.active #type_3_1 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_3_2 stop:first-child, section.structure .right .places .types li.active #type_3_2 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_3_2 stop:last-child, section.structure .right .places .types li.active #type_3_2 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_4_1 stop:first-child, section.structure .right .places .types li.active #type_4_1 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_4_1 stop:last-child, section.structure .right .places .types li.active #type_4_1 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_4_2 stop:first-child, section.structure .right .places .types li.active #type_4_2 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_4_2 stop:last-child, section.structure .right .places .types li.active #type_4_2 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_5_1 stop:first-child, section.structure .right .places .types li.active #type_5_1 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_5_1 stop:last-child, section.structure .right .places .types li.active #type_5_1 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_5_2 stop:first-child, section.structure .right .places .types li.active #type_5_2 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_5_2 stop:last-child, section.structure .right .places .types li.active #type_5_2 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_6_1 stop:first-child, section.structure .right .places .types li.active #type_6_1 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_6_1 stop:last-child, section.structure .right .places .types li.active #type_6_1 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_6_2 stop:first-child, section.structure .right .places .types li.active #type_6_2 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_6_2 stop:last-child, section.structure .right .places .types li.active #type_6_2 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_7_1 stop:first-child, section.structure .right .places .types li.active #type_7_1 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_7_1 stop:last-child, section.structure .right .places .types li.active #type_7_1 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_7_2 stop:first-child, section.structure .right .places .types li.active #type_7_2 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_7_2 stop:last-child, section.structure .right .places .types li.active #type_7_2 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_8_1 stop:first-child, section.structure .right .places .types li.active #type_8_1 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_8_1 stop:last-child, section.structure .right .places .types li.active #type_8_1 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .types li:hover #type_8_2 stop:first-child, section.structure .right .places .types li.active #type_8_2 stop:first-child { stop-color: #FFDE00; }
+
+section.structure .right .places .types li:hover #type_8_2 stop:last-child, section.structure .right .places .types li.active #type_8_2 stop:last-child { stop-color: #FD5900; }
+
+section.structure .right .places .addresses { width: 50%; position: relative; }
+
+section.structure .right .places .addresses li { position: absolute; z-index: 20; left: 0; top: 0; width: 100%; height: 100%; counter-reset: item; border: 1px solid #CCDDFA; background-color: #ffffff; transition: all 0.2s linear; opacity: 0; visibility: hidden; }
+
+section.structure .right .places .addresses li.active { opacity: 1; visibility: visible; }
+
+section.structure .right .places .addresses li .item { padding: 24px 40px; height: 100px; font-size: 24px; line-height: 1.1; display: flex; align-items: flex-end; gap: 18px; }
+
+section.structure .right .places .addresses li .item::before { counter-increment: item; content: counters(item, ".", decimal-leading-zero); font-size: 48px; font-weight: 200; line-height: 1; }
+
+section.gallery { padding-top: 30px; }
+
+section.gallery .slider { margin-top: 80px; position: relative; }
+
+section.gallery .slick-arrow { position: absolute; top: 50%; }
+
+section.gallery .slick-arrow.slick-prev { left: -10px; transform: translate(-100%, -50%); }
+
+section.gallery .slick-arrow.slick-next { right: -10px; transform: translate(100%, -50%); }
+
+section.gallery .toSlick { overflow: hidden; }
+
+section.gallery .toSlick .slide { width: 260px; height: 650px; margin: 0 15px; background-color: #192944; position: relative; overflow: hidden; transition: all 0.2s linear; }
+
+section.gallery .toSlick .slide img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-height: 100%; min-width: 100%; width: auto; height: auto; transition: all 0.2s linear; opacity: 0.5; }
+
+section.gallery .toSlick .slide.slick-current { width: 550px; box-shadow: 0 8px 15px 0 rgba(25, 41, 68, 0.25); }
+
+section.gallery .toSlick .slide.slick-current img { opacity: 1; }
 
 footer { padding-top: 320px; color: #ffffff; overflow: hidden; }
 
@@ -457,5 +684,3 @@ footer .bottom .development svg { margin-left: 12px; width: 104px; height: 38px;
 #fullscreen-portfolio #close-fullscreen-portfolio:hover { background-color: #3f3d49; }
 
 #fullscreen-portfolio #close-fullscreen-portfolio:hover svg { stroke: #ffffff; }
-
-.slick-disabled { opacity: 0.2; pointer-events: none; }

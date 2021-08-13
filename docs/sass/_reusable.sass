@@ -23,20 +23,6 @@ $header_height: 120px
 $header_height_mob: 64px
 $skew: 10deg
 
-/* __________________ Icons gradient __________________ */
-
-.gradient
-	fill: url(#gradient)
-	--grad-col1: #{$lBlueB}
-	--grad-col2: #{$dBlueB}
-	&:hover, &.active
-		--grad-col1: #{$yellow}
-		--grad-col2: #{$orange}
-
-/* __________________ Mixins __________________ */
-
-
-
 /* __________________ Reset styles __________________ */
 
 *
@@ -178,3 +164,19 @@ button, [type=submit], .button
 	&.aos-animate
 		stroke-dashoffset: 1250
 		stroke: $dBlueB
+
+/* __________________ Slick Classes __________________ */
+.slick-arrow
+	background: none
+	transition: all 0.2s linear
+	svg
+		stroke: $b
+	&.slick-disabled
+		opacity: 0
+		visibility: hidden
+	&:hover svg
+		stroke: darken($lBlueB, 20%)
+
+.slick-slide
+	display: inline-flex
+
