@@ -1,11 +1,37 @@
 
 #modal-request
-	padding: 60px 30px 30px
+	padding: 45px 30px 30px
 	width: 400px
 	position: fixed
 	z-index: 3500
 	top: 50%
 	left: 50%
 	transform: translate(-50%, -50%)
+	background-color: $w
+	h3
+		font-size: 36px
+	.fields
+		margin-top: 30px
+		display: flex
+		flex-direction: column
+		gap: 16px
+		align-items: center
+	input[type=submit]
+		margin-top: 20px
+		background-color: $lBlueB
+		&:hover
+			background-color: $dBlueB
+			color: $w
+	#close-request
+		position: absolute
+		padding: 0
+		top: 12px
+		right: 12px
+		background-color: $tsp
+		svg
+			transition: all 0.2s linear
+			stroke: $dBlueB
+		&:hover svg
+			stroke: $lBlueB
 
 

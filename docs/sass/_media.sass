@@ -1,23 +1,797 @@
-// @media (max-width: 1600px)
+@media (max-width: 1600px)
+	h3
+		font-size: 54px
+	body
+		padding-top: 100px
 
+	.fullscreen
+		padding: 24px 0
+	#fullscreen-portfolio
+		.left
+			&::before
+				bottom: -60px
+			.fullimage
+				height: 600px
+		.right .pros
+			gap: 40px
 
-// @media (max-width: 1440px)
+	#header_main
+		height: 110px
+		.logo_kadorrcity
+			gap: 10px
+			svg
+				width: 60px
+				height: 50px
+			.text h1
+				font-size: 28px
+		nav .nav_link
+			padding: 12px
+		.phones
+			gap: 6px
+			a
+				font-size: 16px
 
+	section.gallery .slick-arrow
+		&.slick-prev
+			left: 0
+		&.slick-next
+			right: 0
 
-// @media (max-width: 1280px)
+@media (max-width: 1440px)
+	h3, section.ment .right .text .percent
+		font-size: 48px
+		.angle
+			max-width: 30px
+			max-height: 30px
+		.angle:nth-of-type(1)
+			top: -27px
+			left: -40px
+		.angle:nth-of-type(2)
+			bottom: -24px
+			right: -36px
+	button, [type="submit"], .button
+		padding: 12px 30px
+	input[type="text"], input[type="tel"]
+		padding: 18px
 
+	#header_main
+		height: 100px
+		.logo_kadorrcity
+			svg
+				width: 55px
+				height: 46px
+			.text h1
+				font-size: 24px
+				line-height: 30px
+		nav .nav_link
+			padding: 10px
+	#fullscreen-portfolio
+		.wrapper
+			gap: 30px 70px
+		.sections button
+			padding: 16px 30px
+		.left
+			width: calc( 62% - 50px)
+			&::before
+				bottom: -80px
+			.minigallery .toSlick
+				margin: 0 20px
+		.right
+			width: calc( 38% - 20px)
+		#close-fullscreen-portfolio
+			top: 24px
+			right: 24px
+	footer
+		padding-top: 70px
+		.top
+			.wrapper
+				width: 100%
+				padding-bottom: 50px
+			.logo_wrapper
+				padding: 0
+				&::after
+					display: none
+			.contacts
+				padding: 0
+				a, > div
+					font-size: 24px
+					gap: 24px
+				.phones a
+					font-size: 27px
+			nav
+				padding: 0
+				ul
+					gap: 30px
 
-// @media (max-width: 1024px)
+	section.banner
+		height: 800px
+		.text
+			.name
+				padding-bottom: 10px
+				svg
+					width: 840px
+					height: 130px
+			h2
+				font-size: 64px
+	section.pros .content
+		gap: 40px
+		.left
+			width: 55%
+			.gallery
+				height: 630px
+		.right
+			width: 45%
+			ul li
+				font-size: 22px
+				padding: 18px 30px 18px 24px
+	section.security
+		padding: 80px 0 50px
+		&::before
+			height: 850px
+		.figure_house
+			width: 500px
+			height: 360px
+			transform: translate(0, -40%)
+		.content
+			gap: 50px
+		.left
+			width: 45%
+			.cards .card
+				height: 260px
+				padding: 30px
+		.right
+			width: 55%
+			height: 670px
+			padding: 0
+	section.planning .wrapper .plan_map .plan_markers .marker
+		svg
+			width: 40px
+			height: 60px
+		h5
+			font-size: 18px
+			padding: 10px 18px
+		&.upper:hover h5
+			transform: translate(-50%, calc( 100% + 10px))
+		&.lower:hover h5
+			transform: translate(-50%, calc( -100% - 10px))
+	section.plan_pros .card p
+		font-size: 20px
+	section.estate
+		padding: 80px 0 60px
+		.left
+			padding-top: 50px
+			p
+				font-size: 30px
+			.angles_button
+				margin-top: 40px
+		.right
+			height: 570px
+	section.structure
+		.left
+			height: 600px
+		.right .places
+			.types li
+				height: auto
+				padding: 20px 30px
+				gap: 24px
+				svg
+					max-width: 50px
+					max-height: 50px
+			.addresses li .item
+				padding: 16px 20px
+	section.gallery
+		.slider
+			margin-top: 50px
+		.toSlick .slide
+			width: 250px
+			&.slick-current
+				width: 480px
+	section.ment
+		margin-top: 90px
+		height: 640px
+		.left p
+			padding: 50px
+			font-size: 48px
+		.right form .angles_button
+			margin-top: 0
 
+@media (max-width: 1280px)
+	#header_main
+		.socials, .phones
+			display: none
+	footer
+		.top
+			.contacts
+				svg
+					max-width: 30px
+					max-height: 30px
+				a, > div
+					font-size: 20px
+					span
+						font-size: 18px
+				.phones a
+					font-size: 24px
+			nav ul
+				gap: 24px
+				li a
+					font-size: 16px
 
-// @media (max-width: 768px)
+	#fullscreen-portfolio .left .minigallery .slide
+		width: 140px
 
+	section.banner
+		height: 740px
+		.text
+			.name svg
+				width: 640px
+				height: 95px
+			h2
+				font-size: 48px
+	section.pros
+		padding: 80px 0
+		.content
+			margin-top: 40px
+			.left
+				width: 50%
+				.gallery
+					height: 500px
+				.watch
+					padding: 30px
+			.right
+				width: 50%
+				ul li
+					font-size: 20px
+					padding: 12px 30px 12px 24px
+	section.security
+		&::before
+			height: 700px
+		.left
+			padding: 0
+			.cards .card
+				height: auto
+				img
+					max-width: 80px
+					max-height: 80px
+		.right
+			height: 500px
+	section.planning .wrapper .plan_map
+		margin-top: 40px
+	section.plan_pros .card
+		gap: 12px
+		p
+			font-size: 18px
+	section.structure
+		.left
+			height: 500px
+		.right
+			.places
+				margin-top: 30px
+				.types li
+					padding: 18px
+					svg
+						max-width: 40px
+						max-height: 40px
+					span
+						font-size: 20px
+				.addresses li .item
+					height: auto
+					font-size: 20px
+					&::before
+						font-size: 36px
+	section.gallery .toSlick .slide
+		height: 500px
+		width: 220px
+		&.slick-current
+			width: 400px
+	section.ment
+		height: auto
+		.left p
+			padding: 30px 50px
 
-// @media (max-width: 480px)
+@media (max-width: 1024px)
+	h3
+		font-size: 42px
+	body
+		padding-top: $header_height_mob
 
+	#header_main
+		height: $header_height_mob
+		.wrapper
+			padding: 13px 0
+		nav, .open-request
+			display: none
+		#expand_menu
+			display: block
+	#fullscreen-portfolio
+		top: $header_height_mob
+		height: calc( 100vh - #{$header_height_mob} )
+		.wrapper
+			width: 100%
+			gap: 0
+			> h3
+				display: flex
+				font-size: 30px
+		.sections
+			margin-top: 24px
+			justify-content: center
+			button
+				padding: 12px 24px
+				font-size: 14px
+		.left
+			width: 100%
+			&::before
+				bottom: unset
+				top: 0
+				width: 100%
+				height: 103%
+			.fullimage
+				height: 210px
+				margin-top: 30px
+				.toSlick
+					width: 400px
+					margin: 0 auto
+					.slide
+						vertical-align: top
+			.minigallery
+				margin-top: 16px
+				.toSlick
+					width: 380px
+				.slide
+					width: 85px
+					height: 48px
+		.right
+			width: 100%
+			h3
+				display: none
+			.pros
+				margin-top: 0
+				gap: 20px
+				li
+					gap: 16px
+					img
+						max-width: 36px
+						max-height: 36px
+					> div
+						display: flex
+						align-items: center
+						gap: 12px
+						p
+							font-size: 20px
+						span
+							font-size: 18px
 
-// @media (max-width: 360px)
+	section.banner
+		.blue_stripe
+			display: none
+		.banner_image
+			width: 100vw
+		.text
+			height: auto
+			.name svg text
+				stroke-width: 5px
+		.wrapper
+			display: flex
+			flex-direction: column
+			justify-content: flex-end
+	section.pros
+		padding: 50px 0 120px
+		.content
+			flex-direction: column
+			gap: 27px
+			.left
+				width: 100%
+				.watch
+					margin-left: 0
+			.right
+				width: 100%
+				ul
+					width: 85%
+					margin: 0 auto
+					li
+						&::after
+							display: none
+	section.security
+		&::before
+			height: 90%
+		.figure_house
+			transform: translate(0, -80%)
+		.content
+			gap: 40px
+			flex-direction: column
+		.left
+			width: 90%
+			margin: 0 auto
+			.cards
+				justify-content: center
+				.card
+					max-width: 260px
+		.right
+			margin-top: 0
+			width: 100%
+	section.plan_pros
+		.wrapper
+			gap: 40px
+		.card img
+			max-width: 45px
+			max-height: 45px
+	section.estate
+		&::before
+			height: 50%
+		.wrapper
+			flex-direction: column
+			gap: 60px
+		.right
+			order: 1
+			width: 90vw
+			margin-left: -6vw
+		.left
+			order: 2
+			width: 80%
+			margin: 0 auto
+			padding: 0
+			text-align: center
+			h3, .angles_button
+				margin: 0 auto
+			p
+				font-size: 24px
+	section.structure
+		padding-top: 0
+		&::before
+			width: 50vw
+			height: 95%
+		.wrapper
+			flex-direction: column
+			align-items: flex-end
+			gap: 36px
+		.right
+			order: 1
+			width: 100%
+			position: relative
+			padding-top: 30px
+			&::after
+				content: ''
+				position: absolute
+				z-index: 1
+				top: 0
+				left: -7vw
+				background-color: $cream
+				width: 100vw
+				height: 100%
+			h3
+				z-index: 5
+			.places
+				margin-top: 50px
+				position: relative
+				z-index: 5
+		.left
+			order: 2
+			width: 95%
+			margin-right: -6vw
+	section.gallery .slick-arrow
+		&.slick-prev
+			transform: translate(-80%, -50%)
+		&.slick-next
+			transform: translate(80%, -50%)
+	section.ment
+		margin-top: 60px
+		flex-direction: column
+		.left
+			width: 100%
+			p
+				text-align: center
+			img
+				max-height: unset
+		.right
+			width: 100%
+			padding: 45px 0
 
+@media (max-width: 768px)
+	h3
+		font-size: 36px
+		.angle
+			max-width: 30px
+			max-height: 30px
+		.angle:nth-of-type(1), section.ment .right .text .percent .angle:nth-of-type(1)
+			top: -20px
+			left: -30px
+		.angle:nth-of-type(2), section.ment .right .text .percent .angle:nth-of-type(2)
+			bottom: -14px
+			right: -28px
+	.logo_kadorrcity
+		gap: 0
+		svg
+			max-width: 60px
+			max-height: 60px
+		.text h1
+			font-size: 24px
+
+	footer .top .contacts
+		svg
+			max-width: 24px
+			max-height: 24px
+		a, > div
+			font-size: 18px
+			gap: 12px
+		.phones a
+			font-size: 20px
+	#modal-request #close-request svg
+		max-width: 24px
+		max-height: 24px
+
+	section.banner
+		.wrapper
+			padding: 0 0 40px
+		.text .next
+			margin: 20px auto 0
+			svg
+				stroke: $w
+				stroke-width: 4px !important
+	section.pros .content .left .watch
+		padding: 16px 20px
+		font-size: 14px
+	section.security .figure_house
+		width: 400px
+		height: 300px
+	section.planning .wrapper .plan_map
+		width: max-content
+		margin: 40px auto 0
+		.plan
+			display: none
+		.plan_mobile
+			display: block
+		.plan_markers .marker
+			h5
+				background-color: rgba(#feb800, 0.5)
+			&:nth-of-type(1)
+				left: 75% !important
+			&:nth-of-type(2)
+				left: 65% !important
+				top: 27% !important
+			&:nth-of-type(3)
+				left: 29% !important
+				top: 29% !important
+			&:nth-of-type(4)
+				left: 58% !important
+				top: 42% !important
+			&:nth-of-type(5)
+				left: 26% !important
+				top: 45% !important
+			&:nth-of-type(6)
+				left: 28% !important
+				top: 63% !important
+			&:nth-of-type(7)
+				left: 53% !important
+				top: 59% !important
+			&:nth-of-type(8)
+				left: 56% !important
+				top: 77% !important
+			&:nth-of-type(9)
+				left: 32% !important
+				top: 88% !important
+	section.plan_pros .wrapper
+		flex-direction: column
+		.card
+			width: 100%
+	section.estate
+		padding: 60px 0
+		.right
+			height: 450px
+	section.gallery
+		.slider
+			width: 100vw
+			margin-left: -5vw
+		.toSlick .slide
+			margin: 0 7px
+			width: 180px
+			&.slick-current
+				width: 390px
+		.slick-arrow
+			display: none
+	section.ment
+		.left p
+			font-size: 36px
+			padding: 20px 0
+		.right
+			.text
+				p
+					text-align: center
+				.percents
+					margin-top: 30px
+					padding: 0 30px
+					justify-content: center
+					gap: 70px
+			form
+				margin-top: 50px
+
+@media (max-width: 480px)
+	h3
+		font-size: 24px
+	input[type="text"], input[type="tel"]
+		padding: 14px
+		font-size: 12px
+	.angles_button button
+		font-size: 14px
+	.lb-data .lb-close
+		right: -20px
+
+	#header_mobile
+		.wrapper
+			overflow: visible
+		nav ul li a
+			font-size: 15px
+			padding: 10px
+	#header_mobile .bottom, footer .bottom
+		flex-direction: column
+		align-items: center
+		padding: 0
+		&::before
+			display: none
+		.socials
+			order: 1
+		.copyright
+			order: 2
+			margin-top: 30px
+		.development
+			order: 3
+			position: relative
+			margin-top: 12px
+			padding-top: 12px
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				left: 50%
+				transform: translate(-50%, -50%)
+				border-top: 1px solid rgba($lBlueB, 0.5)
+				width: 100vw
+			a, svg
+				width: 70px
+				height: 25px
+	footer
+		.top .wrapper
+			flex-direction: column
+			align-items: center
+			gap: 60px
+			.logo_wrapper
+				order: 1
+			nav
+				order: 2
+				ul li
+					width: 100%
+					text-align: center
+					a
+						width: 100%
+			.contacts
+				order: 3
+				gap: 50px
+
+	#fullscreen-portfolio
+		padding-top: 60px
+		.sections
+			gap: 10px
+		.right .angles_button
+			margin-top: 10px
+		#close-fullscreen-portfolio
+			padding: 3px
+			top: 15px
+			right: 15px
+			svg
+				max-width: 24px
+				max-height: 24px
+	#modal-request
+		width: 100%
+		h3
+			font-size: 30px
+
+	section.banner .text
+		.name svg
+			width: 92vw
+			height: 14vw
+			padding: 0
+			text
+				animation-duration: 0.7s
+		h2
+			font-size: 36px
+			padding: 8px 0
+			margin-bottom: 16px
+		p
+			font-size: 18px
+	section.pros .content
+		.left .gallery
+			height: 270px
+		ul
+			width: 100%
+			li
+				font-size: 16px
+				width: 100%
+				padding: 12px
+	section.security
+		padding: 100px 0 30px
+		.figure_house
+			width: 300px
+			height: 200px
+			transform: translate(0, -65%)
+			transition-duration: 0.7s
+		.content
+			margin-top: 30px
+			.left
+				width: 100%
+				.cards
+					gap: 14px
+					.card
+						padding: 20px
+						h3
+							font-size: 12px
+							line-height: 1
+			.right
+				height: 250px
+	section.planning .wrapper
+		h3
+			margin-left: auto
+		.plan_map .plan_mobile
+			height: auto
+			width: 90vw
+	section.estate
+		padding-bottom: 0
+		&::before
+			width: 160px
+		.left
+			width: 100%
+			h3
+				font-size: 36px
+			p
+				font-size: 18px
+		.right
+			height: 220px
+	section.structure
+		padding-bottom: 50px
+		&::before
+			height: 95%
+		.wrapper
+			gap: 16px
+		.left
+			width: 95vw
+			margin-right: -5vw
+			height: 280px
+		.right .places
+			.types li
+				gap: 12px
+				padding: 10px 16px
+				svg
+					max-width: 25px
+					max-height: 25px
+				span
+					font-size: 12px
+			.addresses li .item
+				padding: 10px 16px
+				font-size: 12px
+				&::before
+					font-size: 20px
+	section.gallery .toSlick .slide.slick-current
+		width: 340px
+	section.ment
+		.left p
+			font-size: 24px
+		.right
+			padding-left: 5%
+			padding-right: 5%
+			.text
+				p
+					font-size: 18px
+				.percent
+					font-size: 30px
+					.angle:nth-of-type(1)
+						top: -16px
+						left: -27px
+					.angle:nth-of-type(2)
+						bottom: -18px
+						right: -18px
+
+@media (max-width: 360px)
+	section.gallery .toSlick .slide
+		width: 160px
+		&.slick-current
+			width: 280px
 
 
 

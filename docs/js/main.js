@@ -17,30 +17,116 @@ document.addEventListener("DOMContentLoaded", () => {
     delay: 0, // values from 0 to 3000, with step 50ms
     duration: 400, // values from 0 to 3000, with step 50ms
     easing: 'ease', // default easing for AOS animations
-    once: false, // whether animation should happen only once - while scrolling down
+    once: true, // whether animation should happen only once - while scrolling down
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   });
 
   AOS.refresh();
 
+  // Lightbox params
+  lightbox.option({
+    'albumLabel': false,
+    'disableScrolling': true,
+    'fadeDuration': 100,
+    'imageFadeDuration': 100,
+    'showImageNumberLabel': false,
+    'fitImagesInViewport': true,
+    'resizeDuration': 200,
+    'wrapAround': true
+  });
+
   // Slicks options
   slickOptions = {
     'hs1': {
-      arrows: true,
+      // arrows: true,
       draggable: false,
-      touchThreshold: 300,
       focusOnSelect: false,
       infinite: false,
       autoplay: false,
       dots: false,
       variableWidth: true,
-      vertical: false,
-      verticalSwiping: false,
       slidesToShow: 5,
       slidesToScroll: 1,
-      prevArrow: $(".slick-prev.hs1 "),
-      nextArrow: $(".slick-next.hs1 ")
+      // prevArrow: $(".slick-prev.hs1"),
+      // nextArrow: $(".slick-next.hs1"),
+      speed: 500,
+      responsive: [
+        {
+          breakpoint: 1441,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            // arrows: true,
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            // arrows: true,
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 769,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            // arrows: true,
+            dots: false
+          },
+        },
+        {
+          breakpoint: 481,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            // arrows: true,
+            dots: false,
+            draggable: true,
+            touchThreshold: 300
+          },
+        },
+      ],
+    },
+    'hs2': {
+      arrows: false,
+      draggable: false,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: false,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    },
+    'hs3': {
+      arrows: true,
+      draggable: false,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      prevArrow: $(".slick-prev.hs3"),
+      nextArrow: $(".slick-next.hs3"),
+      asNavFor: '.toSlick[data-type=hs2]',
+      responsive: [
+        {
+          breakpoint: 1281,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: false,
+          },
+        },
+      ],
     },
   }
 
@@ -72,8 +158,7 @@ window.addEventListener("load", () => {
   // Globals
   const body = document.body;
   const overlay = document.querySelector('#overlay');
-  const overlay_mobile = document.querySelector('#overlay_mobile');
-  const header = document.querySelector('header');
+  const header = document.getElementById('header_main');
 
   // Loaded animations
   const loading = document.querySelectorAll('.loading');
@@ -133,11 +218,10 @@ window.addEventListener("load", () => {
 
   // Expand mobile
   (function() {
-    const header_main = document.getElementById('header_main');
     const header_mobile = document.getElementById('header_mobile');
     const expand_menu = document.getElementById('expand_menu');
     expand_menu.addEventListener('click', () => {
-      header_main.classList.toggle('active');
+      header.classList.toggle('active');
       header_mobile.classList.toggle('active');
       expand_menu.classList.toggle('active');
     }, true);
@@ -159,23 +243,80 @@ window.addEventListener("load", () => {
     }
   })();
 
-  // fullscreen-portfolio - gallery : .right .image -> change .left .image
+  // Open fullscreen
   (function() {
-    const galleries = document.querySelectorAll('#fullscreen-portfolio .gallery');
-    for (let i = 0; i < galleries.length; i++) {
-      const miniatures = galleries[i].querySelectorAll('.right .image');
-      const fullImgs = galleries[i].querySelectorAll('.left .image');
-      for (let j = 0; j < miniatures.length; j++) {
-        miniatures[j].addEventListener('click', () => {
-          for (let k = 0; k < miniatures.length; k++) {
-            miniatures[k].classList.remove('active');
-            fullImgs[k].classList.remove('active');
-          }
-          fullImgs[j].classList.add('active');
-          miniatures[j].classList.add('active');
-        }, true);
-      }
+    const markers = document.querySelectorAll('.plan_markers .marker');
+    const fullscreen = document.getElementById('fullscreen-portfolio');
+    const closeFullscreen = document.getElementById('close-fullscreen-portfolio');
+    for (let i = 0; i < markers.length; i++) {
+      markers[i].addEventListener('click', () => {
+        fullscreen.classList.add('active');
+        header.classList.add('active');
+      }, true);
     }
+    closeFullscreen.addEventListener('click', () => {
+      fullscreen.classList.remove('active');
+      header.classList.remove('active');
+    }, true);
+  })();
+
+  // Slider gallery enwide and change slides
+  (function() {
+    let slideIndex = 0;
+
+    const gallerySlider = document.querySelectorAll('section.gallery .toSlick');
+    const gallerySlides = document.querySelectorAll('section.gallery .slick-slide');
+    $(gallerySlides).click(function(e) {
+      $(gallerySlides).removeClass('slick-current');
+      e.currentTarget.classList.add('slick-current');
+      slideIndex = e.currentTarget.getAttribute('data-slick-index');
+      setTimeout(() => {
+        $(gallerySlider).slick('slickGoTo', parseInt(e.currentTarget.getAttribute('data-slick-index')));
+      }, 220);
+    });
+
+    const galleryPrev = document.querySelector('.slick-prev.hs1');
+    const galleryNext = document.querySelector('.slick-next.hs1');
+    galleryPrev.addEventListener('click', () => {
+      slideIndex--;
+      console.log(`${slideIndex} / ${gallerySlides.length - 1}`);
+      if (slideIndex < gallerySlides.length - 1) {
+        galleryNext.classList.remove('slick-disabled');
+      }
+      if (slideIndex <= 0) {
+        slideIndex = 0;
+        galleryPrev.classList.add('slick-disabled');
+      } else {
+        const nextSlide = document.querySelector(`section.gallery .slick-slide[data-slick-index="${slideIndex}"]`);
+        $(gallerySlides).removeClass('slick-current');
+        nextSlide.classList.add('slick-current');
+        setTimeout(() => {
+          $(gallerySlider).slick('slickGoTo', slideIndex);
+        }, 220);
+        galleryPrev.classList.remove('slick-disabled');
+      }
+    }, true);
+    galleryNext.addEventListener('click', () => {
+      slideIndex++;
+      console.log(`${slideIndex} / ${gallerySlides.length - 1}`);
+      if (slideIndex > 0) {
+        galleryPrev.classList.remove('slick-disabled');
+      }
+      if (slideIndex == gallerySlides.length - 1) {
+        galleryNext.classList.add('slick-disabled');
+      }
+      if (slideIndex >= gallerySlides.length - 1) {
+        slideIndex = gallerySlides.length - 1;
+      } else {
+        const nextSlide = document.querySelector(`section.gallery .slick-slide[data-slick-index="${slideIndex}"]`);
+        $(gallerySlides).removeClass('slick-current');
+        nextSlide.classList.add('slick-current');
+        setTimeout(() => {
+          $(gallerySlider).slick('slickGoTo', slideIndex);
+        }, 220);
+        galleryNext.classList.remove('slick-disabled');
+      }
+    }, true);
   })();
 
   // .open-fullscreen-portfolio > #fullscreen-portfolio + goToSlide(data-slide)

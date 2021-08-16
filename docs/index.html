@@ -11,7 +11,7 @@
 
 	<!-- Libraries CSS -->
 	<link rel="stylesheet" href="./js/libs/aos.css">
-	<link rel="stylesheet" href="./js/libs/swiper-bundle.min.css">
+	<link rel="stylesheet" href="./js/libs/lightbox/css/lightbox.css">
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="./css/main.css">
@@ -70,10 +70,10 @@
 			</button>
 
 			<button id="expand_menu">
-				<svg class="hamb" width="20" height="20">
+				<svg class="hamb" width="24" height="24">
 					<use xlink:href="./img/icons.svg#hamb"></use>
 				</svg>
-				<svg class="close" width="20" height="20">
+				<svg class="close" width="24" height="24">
 					<use xlink:href="./img/icons.svg#close"></use>
 				</svg>
 			</button>
@@ -85,63 +85,59 @@
 		<div class="wrapper">
 			<nav>
 				<ul class="nav_list">
-					<li class="nav_item"><a class="nav_link" href="#service">Услуги</a></li>
-					<li class="nav_item"><a class="nav_link" href="#about_us">О нас</a></li>
-					<li class="nav_item"><a class="nav_link" href="#prices">Цены</a></li>
-					<li class="nav_item"><a class="nav_link" href="#reviews">Отзывы</a></li>
-					<li class="nav_item"><a class="nav_link" href="#portfolio">Наши работы</a></li>
+					<li class="nav_item"><a class="nav_link" href="#about_us">Планировки</a></li>
+					<li class="nav_item"><a class="nav_link" href="#prices">Коммерция</a></li>
+					<li class="nav_item"><a class="nav_link" href="#reviews">Рассрочка</a></li>
+					<li class="nav_item"><a class="nav_link" href="#portfolio">Инфраструктура</a></li>
+					<li class="nav_item"><a class="nav_link" href="#contacts">Галерея</a></li>
 					<li class="nav_item"><a class="nav_link" href="#contacts">Контакты</a></li>
 				</ul>
 			</nav>
-			<div class="slogan">
-				<a href="#">
-					<svg>
-						<use class="logo_delicate" xlink:href="./img/icons.svg#logo_delicate"></use>
-					</svg>
-				</a>
-				<div class="dash"></div>
-				<h4 class="slogan_text">
-					Больше чем<br>
-					детейлинг
-				</h4>
-			</div>
 			<div class="contacts">
 				<div class="phones">
-					<svg width="24" height="24">
+					<svg width="30" height="30">
 						<use xlink:href="./img/icons.svg#phone"></use>
 					</svg>
-					<div>
-						<a href="tel:+380688667443">
-							+380 (68) 866-74-43
-						</a>
-					</div>
+					<a href="tel:+380938483780">+38 (093) 848-37-80</a>
 				</div>
 				<div class="address">
-					<svg width="24" height="24">
-						<use xlink:href="./img/icons.svg#map"></use>
+					<svg class="stroke" width="30" height="30">
+						<use xlink:href="./img/icons.svg#location"></use>
 					</svg>
 					<div>
-						<p>г. Одесса, ул. Щерса 128</p>
+						<p>г. Одесса<br>
+							пр.Адмиральский 34/А</p>
 					</div>
 				</div>
 				<div class="schedule">
-					<svg width="24" height="24">
+					<svg class="stroke" width="30" height="30">
 						<use xlink:href="./img/icons.svg#calendar"></use>
 					</svg>
 					<div>
 						<span>Работаем:</span>
-						<p>Пн-Вс 9:00 - 21:00</p>
+						<p>Пн - Пт: с 10:00 до 18:00</p>
 					</div>
-				</div>
-				<div class="socials">
-					<a href="#"><svg class="stroke" width="30" height="30"><use xlink:href="./img/icons.svg#facebook"></use></svg></a>
-					<a href="#"><svg width="30" height="30"><use xlink:href="./img/icons.svg#instagram"></use></svg></a>
-					<a href="#"><svg width="30" height="30"><use xlink:href="./img/icons.svg#viber"></use></svg></a>
-					<a href="#"><svg width="30" height="30"><use xlink:href="./img/icons.svg#telegram"></use></svg></a>
 				</div>
 			</div>
 			<div class="bottom">
-				<div class="copyright">© Delicate Car Wash 2018-2021</div>
+				<div class="copyright">© City House 2018-2021</div>
+				<div class="socials">
+					<a href="#">
+						<svg width="17" height="32">
+							<use class="social_icon" xlink:href="./img/icons.svg#facebook"></use>
+						</svg>
+					</a>
+					<a href="#">
+						<svg width="25" height="25">
+							<use class="social_icon" xlink:href="./img/icons.svg#instagram"></use>
+						</svg>
+					</a>
+					<a href="#">
+						<svg width="31" height="28">
+							<use class="social_icon" xlink:href="./img/icons.svg#telegram"></use>
+						</svg>
+					</a>
+				</div>
 				<div class="development">
 					<p>Создание сайта  —</p>
 					<a href="https://devpro.agency/">
@@ -172,12 +168,141 @@
 	<div id="fullscreen-portfolio" class="fullscreen">
 		<div class="wrapper">
 
-			fullscreen-portfolio
+			<h3>
+				<svg
+					class="angle"
+					width="50"
+					height="50"
+					data-aos="fade-down-right"
+				><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+				63 жемчужина
+				<svg
+					class="angle"
+					width="50"
+					height="50"
+					data-aos="fade-up-left"
+				><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+			</h3>
+
+			<div class="sections">
+				<button class="active">Секция №1</button>
+				<button>Секция №2</button>
+				<button>Секция №3</button>
+			</div>
+
+			<div class="left">
+
+				<div class="fullimage">
+					<div class="toSlick" data-type="hs2" data-mobile="false">
+						<div class="slide"><img src="./img/gallery_1.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_3.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_2.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_4.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_1.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_3.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_2.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_4.png" alt="gallery_image">
+						</div>
+					</div>
+				</div>
+
+				<div class="minigallery">
+					<button class="slick-prev hs3">
+						<svg width="13" height="22">
+							<use class="arrow_left" xlink:href="./img/icons.svg#arrow_left"></use>
+						</svg>
+					</button>
+
+					<div class="toSlick" data-type="hs3" data-mobile="false">
+						<div class="slide"><img src="./img/gallery_1.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_3.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_2.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_4.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_1.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_3.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_2.png" alt="gallery_image">
+						</div>
+						<div class="slide"><img src="./img/gallery_4.png" alt="gallery_image">
+						</div>
+					</div>
+
+					<button class="slick-next hs3">
+						<svg width="13" height="22">
+							<use class="arrow_right" xlink:href="./img/icons.svg#arrow_right"></use>
+						</svg>
+					</button>
+				</div>
+
+			</div>
+
+			<div class="right">
+				<h3>
+					<svg
+						class="angle"
+						width="50"
+						height="50"
+						data-aos="fade-down-right"
+					><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+					63 жемчужина
+					<svg
+						class="angle"
+						width="50"
+						height="50"
+						data-aos="fade-up-left"
+					><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+				</h3>
+				<ul class="pros">
+					<li>
+						<img width="49" height="48" src="./img/img_shared/ico_space.svg" alt="ico_space">
+						<div>
+							<p>Площадь от 45 кв.м</p>
+						</div>
+					</li>
+					<li>
+						<img width="49" height="48" src="./img/img_shared/ico_buildings.svg" alt="ico_buildings">
+						<div>
+							<p>12 этажей</p>
+						</div>
+					</li>
+					<li>
+						<img width="49" height="48" src="./img/img_shared/ico_clock.svg" alt="ico_space">
+						<div>
+							<span>Срок сдачи:</span>
+							<p>2 квартала 2023 г.</p>
+						</div>
+					</li>
+					<li>
+						<img width="49" height="48" src="./img/img_shared/ico_moneyBag.svg" alt="ico_space">
+						<div>
+							<span>Цена:</span>
+							<p>от 750$ кв.м</p>
+						</div>
+					</li>
+				</ul>
+				<div class="angles_button loading">
+					<svg class="angle" width="50" height="50"><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+					<button>Подобрать квартиру</button>
+					<svg class="angle" width="50" height="50"><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+				</div>
+			</div>
 
 		</div>
 
 		<button id="close-fullscreen-portfolio">
-			<svg>
+			<svg width="30" height="30">
 				<use xlink:href="./img/icons.svg#close"></use>
 			</svg>
 		</button>
@@ -186,20 +311,26 @@
 	<!-- Overlay and modals -->
 	<div id="overlay">
 		<form id="modal-request">
-			<h4>Записаться</h4>
+			<h3>
+				<svg
+					class="angle"
+					width="50"
+					height="50"
+				><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+				Связаться
+				<svg
+					class="angle"
+					width="50"
+					height="50"
+				><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+			</h3>
 			<div class="fields">
-				<div class="skew">
-					<input type="text" placeholder="Имя">
-				</div>
-				<div class="skew">
-					<input type="tel" placeholder="Телефон">
-				</div>
-				<div class="skew submit">
-					<input type="submit" value="Записаться">
-				</div>
+				<input type="text" placeholder="Имя">
+				<input type="tel" placeholder="Телефон">
+				<input type="submit" value="Записаться">
 			</div>
 			<button id="close-request">
-				<svg>
+				<svg width="40" height="40">
 					<use xlink:href="./img/icons.svg#close"></use>
 				</svg>
 			</button>
@@ -230,7 +361,7 @@
 				<p class="loading">
 					Масштабное пространство — отличительная черта квартала, которая создаёт все условия для жизни и развития современного человека
 				</p>
-				<div class="angles_button loading">
+				<div class="angles_button open-request loading">
 					<svg class="angle" width="50" height="50"><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
 					<button>Подробнее</button>
 					<svg class="angle" width="50" height="50"><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
@@ -372,7 +503,8 @@
 				><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
 			</h3>
 			<div id="plan_map" class="plan_map">
-				<img src="./img/plan.png" alt="plan_map">
+				<img class="plan" src="./img/plan.png" alt="plan_map">
+				<img class="plan_mobile" src="./img/plan_mobile.png" alt="plan_map">
 				<div class="plan_markers">
 					<svg>
 						<linearGradient id="marker_round" x1="30" y1="42.1875" x2="30" y2="15.8203" gradientUnits="userSpaceOnUse">
@@ -420,7 +552,7 @@
 						</svg>
 						<h5>61 Жемчужина</h5>
 					</button>
-					<button data-aos="fade-down" data-aos-delay="400" data-aos-anchor="#plan_map" class="marker upper" data-marker="4" style="left: 45.85%; top: 24.96%;">
+					<button data-aos="fade-down" data-aos-delay="400" data-aos-anchor="#plan_map" class="marker lower" data-marker="4" style="left: 45.85%; top: 24.96%;">
 						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<defs>
 								<linearGradient id="marker_4" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
@@ -433,7 +565,7 @@
 						</svg>
 						<h5>63 Жемчужина</h5>
 					</button>
-					<button data-aos="fade-down" data-aos-delay="500" data-aos-anchor="#plan_map" class="marker lower" data-marker="5" style="left: 57.43%; top: 57.02%;">
+					<button data-aos="fade-down" data-aos-delay="500" data-aos-anchor="#plan_map" class="marker upper" data-marker="5" style="left: 48%; top: 50%;">
 						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<defs>
 								<linearGradient id="marker_5" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
@@ -446,7 +578,7 @@
 						</svg>
 						<h5>65 Жемчужина</h5>
 					</button>
-					<button data-aos="fade-down" data-aos-delay="600" data-aos-anchor="#plan_map" class="marker upper" data-marker="6" style="left: 61.75%; top: 28.95%;">
+					<button data-aos="fade-down" data-aos-delay="500" data-aos-anchor="#plan_map" class="marker upper" data-marker="6" style="left: 65%; top: 49%;">
 						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<defs>
 								<linearGradient id="marker_6" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
@@ -457,9 +589,9 @@
 							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_6)"/>
 							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
 						</svg>
-						<h5>67 Жемчужина</h5>
+						<h5>69 Жемчужина</h5>
 					</button>
-					<button data-aos="fade-down" data-aos-delay="700" data-aos-anchor="#plan_map" class="marker upper" data-marker="7" style="left: 80.47%; top: 26.59%;">
+					<button data-aos="fade-down" data-aos-delay="600" data-aos-anchor="#plan_map" class="marker lower" data-marker="7" style="left: 61.75%; top: 28.95%;">
 						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<defs>
 								<linearGradient id="marker_7" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
@@ -470,9 +602,9 @@
 							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_7)"/>
 							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
 						</svg>
-						<h5>69 Жемчужина</h5>
+						<h5>71 Жемчужина</h5>
 					</button>
-					<button data-aos="fade-down" data-aos-delay="800" data-aos-anchor="#plan_map" class="marker lower" data-marker="8" style="left: 88.65%; top: 54.21%;">
+					<button data-aos="fade-down" data-aos-delay="700" data-aos-anchor="#plan_map" class="marker lower" data-marker="8" style="left: 80.47%; top: 26.59%;">
 						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<defs>
 								<linearGradient id="marker_8" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
@@ -483,7 +615,20 @@
 							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_8)"/>
 							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
 						</svg>
-						<h5>71 Жемчужина</h5>
+						<h5>73 Жемчужина</h5>
+					</button>
+					<button data-aos="fade-down" data-aos-delay="800" data-aos-anchor="#plan_map" class="marker upper" data-marker="9" style="left: 88.65%; top: 54.21%;">
+						<svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="marker_9" x1="30" y1="90" x2="30" y2="0" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#192944"/>
+									<stop offset="1" stop-color="#CCDDFA"/>
+								</linearGradient>
+							</defs>
+							<path d="M30 0C14.0072 0 0.996094 13.0112 0.996094 29.0039C0.996094 50.6869 26.7512 87.3367 27.8476 88.8863C28.3417 89.5848 29.1443 90 30 90C30.8557 90 31.6583 89.5848 32.1524 88.8863C33.2488 87.3367 59.0039 50.6869 59.0039 29.0039C59.0039 13.0112 45.9928 0 30 0Z" fill="url(#marker_9)"/>
+							<path d="M30 42.1875C37.2811 42.1875 43.1836 36.285 43.1836 29.0039C43.1836 21.7228 37.2811 15.8203 30 15.8203C22.7189 15.8203 16.8164 21.7228 16.8164 29.0039C16.8164 36.285 22.7189 42.1875 30 42.1875Z" fill="url(#marker_round)"/>
+						</svg>
+						<h5>75 Жемчужина</h5>
 					</button>
 				</div>
 			</div>
@@ -535,7 +680,7 @@
 				<p>Доступны к приобретению
 					коммерческие помещения
 					в Жемчужинах от KADOR City</p>
-					<div class="angles_button">
+					<div class="angles_button open-request">
 						<svg class="angle" width="50" height="50"><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
 						<button>Подробнее</button>
 						<svg class="angle" width="50" height="50"><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
@@ -704,21 +849,77 @@
 			</h3>
 
 			<div class="slider">
-				<button class="slick-prev hs1">
+				<button class="slick-prev hs1 slick-disabled">
 					<svg width="26" height="44">
 						<use class="arrow_left" xlink:href="./img/icons.svg#arrow_left"></use>
 					</svg>
 				</button>
 
 				<div class="toSlick" data-type="hs1" data-mobile="false">
-					<div class="slide"><img src="./img/gallery_1.png" alt="gallery_image"></div>
-					<div class="slide"><img src="./img/gallery_2.png" alt="gallery_image"></div>
-					<div class="slide"><img src="./img/gallery_3.png" alt="gallery_image"></div>
-					<div class="slide"><img src="./img/gallery_4.png" alt="gallery_image"></div>
-					<div class="slide"><img src="./img/gallery_1.png" alt="gallery_image"></div>
-					<div class="slide"><img src="./img/gallery_2.png" alt="gallery_image"></div>
-					<div class="slide"><img src="./img/gallery_3.png" alt="gallery_image"></div>
-					<div class="slide"><img src="./img/gallery_4.png" alt="gallery_image"></div>
+					<div class="slide">
+						<a href="./img/gallery_1.png" data-lightbox="gallery_image" class="zoomIn">
+							<svg width="24" height="24">
+								<use xlink:href="./img/icons.svg#loupe"></use>
+							</svg>
+						</a>
+						<img src="./img/gallery_1.png" alt="gallery_image">
+					</div>
+					<div class="slide">
+						<a href="./img/gallery_2.png" data-lightbox="gallery_image" class="zoomIn">
+							<svg width="24" height="24">
+								<use xlink:href="./img/icons.svg#loupe"></use>
+							</svg>
+						</a>
+						<img src="./img/gallery_2.png" alt="gallery_image">
+					</div>
+					<div class="slide">
+						<a href="./img/gallery_2.png" data-lightbox="gallery_image" class="zoomIn">
+							<svg width="24" height="24">
+								<use xlink:href="./img/icons.svg#loupe"></use>
+							</svg>
+						</a>
+						<img src="./img/gallery_1.png" alt="gallery_image">
+					</div>
+					<div class="slide">
+						<a href="./img/gallery_2.png" data-lightbox="gallery_image" class="zoomIn">
+							<svg width="24" height="24">
+								<use xlink:href="./img/icons.svg#loupe"></use>
+							</svg>
+						</a>
+						<img src="./img/gallery_2.png" alt="gallery_image">
+					</div>
+					<div class="slide">
+						<a href="./img/gallery_1.png" data-lightbox="gallery_image" class="zoomIn">
+							<svg width="24" height="24">
+								<use xlink:href="./img/icons.svg#loupe"></use>
+							</svg>
+						</a>
+						<img src="./img/gallery_1.png" alt="gallery_image">
+					</div>
+					<div class="slide">
+						<a href="./img/gallery_2.png" data-lightbox="gallery_image" class="zoomIn">
+							<svg width="24" height="24">
+								<use xlink:href="./img/icons.svg#loupe"></use>
+							</svg>
+						</a>
+						<img src="./img/gallery_2.png" alt="gallery_image">
+					</div>
+					<div class="slide">
+						<a href="./img/gallery_1.png" data-lightbox="gallery_image" class="zoomIn">
+							<svg width="24" height="24">
+								<use xlink:href="./img/icons.svg#loupe"></use>
+							</svg>
+						</a>
+						<img src="./img/gallery_1.png" alt="gallery_image">
+					</div>
+					<div class="slide">
+						<a href="./img/gallery_2.png" data-lightbox="gallery_image" class="zoomIn">
+							<svg width="24" height="24">
+								<use xlink:href="./img/icons.svg#loupe"></use>
+							</svg>
+						</a>
+						<img src="./img/gallery_2.png" alt="gallery_image">
+					</div>
 				</div>
 
 				<button class="slick-next hs1">
@@ -730,75 +931,153 @@
 
 		</div>
 	</section>
+
+	<section id="ment" class="ment">
+		<div class="left">
+			<p>Уникальные условия рассрочки</p>
+			<img src="./img/thumb_installment.png" alt="thumb_installment">
+		</div>
+		<div class="right">
+			<img src="./img/thumb_estate.png" alt="installment_bg">
+			<div class="content">
+				<div class="text">
+					<p>Первый взнос:</p>
+					<div class="percents">
+						<div class="percent">
+							<svg
+								class="angle"
+								width="50"
+								height="50"
+								data-aos="fade-down-right"
+							><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+							4<sup>%</sup>
+							<svg
+								class="angle"
+								width="50"
+								height="50"
+								data-aos="fade-up-left"
+							><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+						</div>
+						<div class="percent">
+							<svg
+								class="angle"
+								width="50"
+								height="50"
+								data-aos="fade-down-right"
+							><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+							10<sup>%</sup>
+							<svg
+								class="angle"
+								width="50"
+								height="50"
+								data-aos="fade-up-left"
+							><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+						</div>
+						<div class="percent">
+							<svg
+								class="angle"
+								width="50"
+								height="50"
+								data-aos="fade-down-right"
+							><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+							25<sup>%</sup>
+							<svg
+								class="angle"
+								width="50"
+								height="50"
+								data-aos="fade-up-left"
+							><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+						</div>
+					</div>
+				</div>
+				<form>
+					<input type="text" placeholder="Имя">
+					<input type="tel" placeholder="Телефон">
+					<div class="angles_button">
+						<svg class="angle" width="50" height="50"><use xlink:href="./img/icons.svg#angle_top_left"></use></svg>
+						<input type="submit" value="Получить рассрочку">
+						<svg class="angle" width="50" height="50"><use xlink:href="./img/icons.svg#angle_bottom_right"></use></svg>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
 	<!-- Content end -->
 
 	<footer>
 		<div class="wrapper">
 
 			<div class="top">
-				<div class="slogan">
-					<a href="#">
-						<svg>
-							<use class="logo_delicate" xlink:href="./img/icons.svg#logo_delicate"></use>
-						</svg>
-					</a>
-					<div class="dash"></div>
-					<h4 class="slogan_text">
-						Больше чем<br>
-						детейлинг
-					</h4>
-				</div>
-				<div class="socials_wrapper">
-					<div class="socials">
-						<a href="#">
-							<svg>
-								<use class="social_icon" xlink:href="./img/icons.svg#instagram"></use>
+				<div class="wrapper">
+					<div class="logo_wrapper">
+						<a href="#" class="logo_kadorrcity">
+							<svg class="icon" width="79" height="69">
+								<use xlink:href="./img/icons.svg#logo_kadorr"></use>
 							</svg>
+							<div class="text">
+								<h1>Kadorr City</h1>
+								<p>Официальный парнёр</p>
+							</div>
 						</a>
 					</div>
-					<p>Не забудь<br>
-						подписаться</p>
-				</div>
-				<div class="contacts">
-					<div class="phones">
-						<a href="tel:+380688667443">
-							<svg class="stroke">
+					<div class="contacts">
+						<div class="phones">
+							<svg width="36" height="36">
 								<use xlink:href="./img/icons.svg#phone"></use>
 							</svg>
-							+380 (68) 866-74-43
-						</a>
-					</div>
-					<div class="address">
-						<svg class="stroke" width="24" height="24">
-							<use xlink:href="./img/icons.svg#map"></use>
-						</svg>
-						<div>
-							<p>г. Одесса, ул. Щерса 128</p>
+							<a href="tel:+380938483780">+38 (093) 848-37-80</a>
+						</div>
+						<div class="address">
+							<svg class="stroke" width="49" height="49">
+								<use xlink:href="./img/icons.svg#location"></use>
+							</svg>
+							<div>
+								<p>г. Одесса<br>
+									пр.Адмиральский 34/А</p>
+							</div>
+						</div>
+						<div class="schedule">
+							<svg class="stroke" width="43" height="43">
+								<use xlink:href="./img/icons.svg#calendar"></use>
+							</svg>
+							<div>
+								<span>Работаем:</span>
+								<p>Пн - Пт: с 10:00 до 18:00</p>
+							</div>
 						</div>
 					</div>
-					<div class="schedule">
-						<svg class="stroke" width="25" height="25">
-							<use xlink:href="./img/icons.svg#calendar"></use>
-						</svg>
-						<div>
-							<span>Работаем:</span>
-							<p>Пн-Вс 9:00 - 21:00</p>
-						</div>
-					</div>
+					<nav>
+						<ul class="nav_list">
+							<li class="nav_item"><a class="nav_link" href="#">Планировки</a></li>
+							<li class="nav_item"><a class="nav_link" href="#">Коммерция</a></li>
+							<li class="nav_item"><a class="nav_link" href="#">Рассрочка</a></li>
+							<li class="nav_item"><a class="nav_link" href="#">Инфраструктура</a></li>
+							<li class="nav_item"><a class="nav_link" href="#">Галерея</a></li>
+							<li class="nav_item"><a class="nav_link" href="#">Контакты</a></li>
+						</ul>
+					</nav>
 				</div>
-				<nav>
-					<ul class="nav_list">
-						<li class="nav_item"><a class="nav_link" href="#">Услуги</a></li>
-						<li class="nav_item"><a class="nav_link" href="#">О нас</a></li>
-						<li class="nav_item"><a class="nav_link" href="#">Цены</a></li>
-						<li class="nav_item"><a class="nav_link" href="#">Отзывы</a></li>
-						<li class="nav_item"><a class="nav_link" href="#">Наши работы</a></li>
-						<li class="nav_item"><a class="nav_link" href="#">Контакты</a></li>
-					</ul>
-				</nav>
 			</div>
+
 			<div class="bottom">
-				<div class="copyright">© Delicate Car Wash 2018-2021</div>
+				<div class="copyright">© City House 2018-2021</div>
+				<div class="socials">
+					<a href="#">
+						<svg width="17" height="32">
+							<use class="social_icon" xlink:href="./img/icons.svg#facebook"></use>
+						</svg>
+					</a>
+					<a href="#">
+						<svg width="25" height="25">
+							<use class="social_icon" xlink:href="./img/icons.svg#instagram"></use>
+						</svg>
+					</a>
+					<a href="#">
+						<svg width="31" height="28">
+							<use class="social_icon" xlink:href="./img/icons.svg#telegram"></use>
+						</svg>
+					</a>
+				</div>
 				<div class="development">
 					<p>Создание сайта  —</p>
 					<a href="https://devpro.agency/">
@@ -830,6 +1109,7 @@
 	<script src="./js/libs/jquery-3.5.1.min.js"></script>
 	<script src="./js/libs/slick.min.js"></script>
 	<script src="./js/libs/aos.js"></script>
+	<script src="./js/libs/lightbox/js/lightbox.js"></script>
 	<script src="./js/libs/jquery.maskedinput.min.js" defer></script>
 
 	<!-- Google Maps API -->

@@ -20,7 +20,7 @@ $orange:		#FD5900
 $cream:			#E5E5E5
 
 $header_height: 120px
-$header_height_mob: 64px
+$header_height_mob: 74px
 $skew: 10deg
 
 /* __________________ Reset styles __________________ */
@@ -33,7 +33,6 @@ $skew: 10deg
 	color: inherit
 	box-sizing: border-box
 	line-height: inherit
-	line-height: 1.08
 
 /* __________________ General Tags __________________ */
 
@@ -115,10 +114,22 @@ button, [type=submit], .button
 	cursor: pointer
 	transition: all 0.2s linear
 
+input[type=text],
+input[type=tel]
+	width: 100%
+	padding: 22px
+	border: 1px solid $dBlueB
+	background: none
+	color: $b
+	font-size: 18px
+	&::placeholder
+		color: $b
+		opacity: 1
+
 /* __________________ General Classes __________________ */
 
 .wrapper
-	width: 89%
+	width: 90%
 	margin: 0 auto
 	position: relative
 	z-index: 5
@@ -165,17 +176,57 @@ button, [type=submit], .button
 		stroke-dashoffset: 1250
 		stroke: $dBlueB
 
+.logo_kadorrcity
+	display: flex
+	align-items: center
+	gap: 20px
+	.icon
+		fill: $w
+	.text
+		text-align: center
+		h1
+			font-weight: 700
+			font-size: 33px
+			line-height: 41px
+		p
+			padding-top: 5px
+			font-weight: 300
+			font-size: 11px
+			line-height: 13px
+			position: relative
+			&::before, &::after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				height: 1px
+				transform: translate(0, -50%)
+				transition: all 0.2s linear
+			&::before
+				width: 100%
+				background-color: rgba($w, 0.5)
+				z-index: 10
+			&::after
+				width: 0
+				height: 2px
+				background-color: rgba($dBlueB, 0.5)
+				z-index: 15
+	&:hover
+		svg
+			fill: $lBlueB
+		p::after
+			width: 100%
+
 /* __________________ Slick Classes __________________ */
-.slick-arrow
+.slick-arrow, button.hs1
 	background: none
 	transition: all 0.2s linear
 	svg
-		stroke: $b
+		position: relative
 	&.slick-disabled
 		opacity: 0
 		visibility: hidden
-	&:hover svg
-		stroke: darken($lBlueB, 20%)
 
 .slick-slide
 	display: inline-flex

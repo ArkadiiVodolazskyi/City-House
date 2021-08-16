@@ -1,6 +1,11 @@
 
+# To fix
+- добавить интерактивность секций на попап
+- плавность изменения активных слайдов в галерее
+	- пока не получилось изменить default поведение кнопки по тому же принципу, что и клик по слайдам - т.е. изменять ширину слайда и двигать tape после задержки
+- заблокировать разворот (ландшафтный режим) на мобильном
+
 # Questions
-- Баннер, Недвижимость - что на кнопке Подробнее?
 
 # Complile sass
 node-sass -w --sourcemap=none --no-cache --output-style=compact docs/sass/main.sass docs/css/main.css
@@ -42,3 +47,66 @@ node-sass -w --sourcemap=none --no-cache --output-style=compact docs/sass/main.s
 - Logo - появление частей изнутри-наружу
 - Перетекание углов
 - Улучшить анимацию появления здания в секции Безопасность
+
+<div class="toSlick" data-type="hs1" data-mobile="false">
+	<div class="slide">
+		<div class="child">
+			<a href="./img/gallery_1.png" data-lightbox="gallery_image" class="zoomIn">
+				<svg width="24" height="24">
+					<use xlink:href="./img/icons.svg#loupe"></use>
+				</svg>
+			</a>
+			<img src="./img/gallery_1.png" alt="gallery_image">
+		</div>
+	</div>
+	<div class="slide">
+		<div class="child">
+			<a href="./img/gallery_2.png" data-lightbox="gallery_image" class="zoomIn">
+				<svg width="24" height="24">
+					<use xlink:href="./img/icons.svg#loupe"></use>
+				</svg>
+			</a>
+			<img src="./img/gallery_2.png" alt="gallery_image">
+		</div>
+	</div>
+	<div class="slide">
+		<div class="child">
+			<a href="./img/gallery_1.png" data-lightbox="gallery_image" class="zoomIn">
+				<svg width="24" height="24">
+					<use xlink:href="./img/icons.svg#loupe"></use>
+				</svg>
+			</a>
+			<img src="./img/gallery_1.png" alt="gallery_image">
+		</div>
+	</div>
+	<div class="slide">
+		<div class="child">
+			<a href="./img/gallery_2.png" data-lightbox="gallery_image" class="zoomIn">
+				<svg width="24" height="24">
+					<use xlink:href="./img/icons.svg#loupe"></use>
+				</svg>
+			</a>
+			<img src="./img/gallery_2.png" alt="gallery_image">
+		</div>
+	</div>
+	<div class="slide">
+		<div class="child">
+			<a href="./img/gallery_1.png" data-lightbox="gallery_image" class="zoomIn">
+				<svg width="24" height="24">
+					<use xlink:href="./img/icons.svg#loupe"></use>
+				</svg>
+			</a>
+			<img src="./img/gallery_1.png" alt="gallery_image">
+		</div>
+	</div>
+	<div class="slide">
+		<div class="child">
+			<a href="./img/gallery_2.png" data-lightbox="gallery_image" class="zoomIn">
+				<svg width="24" height="24">
+					<use xlink:href="./img/icons.svg#loupe"></use>
+				</svg>
+			</a>
+			<img src="./img/gallery_2.png" alt="gallery_image">
+		</div>
+	</div>
+</div>

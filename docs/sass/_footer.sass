@@ -1,85 +1,79 @@
 footer
-	padding-top: 320px
+	padding-top: 130px
+	background-color: $dBlueB
 	color: $w
 	overflow: hidden
-	.wrapper
-		width: 1320px
 	.top
-		padding-bottom: 90px
-		display: flex
-		align-items: flex-start
-		justify-content: space-between
-		gap: 120px
-	.slogan
-		display: flex
-		align-items: center
-		> *
-			flex-shrink: 0
-		svg
-			width: 221px
-			height: 65px
-		.dash
-			width: 32px
-			height: 1px
-			background-color: $w
-			margin: 0 20px 30px
-		.slogan_text
-			line-height: 1.29
-			font-weight: normal
-	.socials_wrapper
-		.socials
-			a
-				display: flex
-				align-items: center
-				justify-content: center
-				svg
-					width: 34px
-					height: 34px
-					fill: $w
-					stroke: $tsp
-				&:hover svg
-					fill: $w
-		p
-			margin-top: 20px
-			text-align: center
-			font-size: 14px
-			color: #858585
-			line-height: 1.19
-	.contacts
-		display: flex
-		flex-direction: column
-		gap: 40px
-		a, > div
+		.wrapper
+			width: 1400px
+			display: flex
+			justify-content: space-between
+			padding-bottom: 150px
+		.logo_wrapper
+			padding-right: 12vw
+			position: relative
 			display: flex
 			align-items: center
-			font-size: 18px
-			font-weight: bold
-			line-height: 1.19
-			color: $w
-			span
-				font-size: 14px
-				font-weight: 500
-				margin-bottom: 6px
-		a:hover
-			color: $w
-		svg
-			width: 21px
-			height: 21px
-			margin-right: 12px
-	nav ul
-		flex-direction: column
-		align-items: flex-start
-		justify-content: flex-start
-		gap: 22px
-		li
-			a
-				font-size: 14px
-				color: #f2f2f2
-				letter-spacing: -0.21px
+			justify-content: center
+			&::after
+				content: ''
+				position: absolute
+				right: 0
+				top: 50%
+				width: 1px
+				height: calc( 100% + 45px )
+				background-color: $lBlueB
+				transform: translate(50%, -50%)
+			.logo_kadorrcity
+				flex-direction: column
+				justify-content: center
+				width: max-content
+				height: max-content
+		.contacts
+			padding-left: 7vw
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			a, > div
+				display: flex
+				align-items: center
+				font-size: 30px
+				gap: 30px
+				span
+					font-size: 24px
+					margin-bottom: 6px
+			svg
+				stroke: $w
+			.phones a
+				font-size: 36px
+				text-transform: uppercase
+				text-decoration: underline
+				text-decoration-color: $tsp
+				text-decoration-thickness: 2px
+				text-underline-offset: 7px
 				&:hover
-					color: $w
+					text-decoration-color: $w
+		nav
+			padding-left: 7vw
+			ul
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				justify-content: flex-start
+				gap: 40px
+				li
+					a
+						font-size: 18px
+						font-weight: 500
+						text-transform: uppercase
+						text-decoration: underline
+						text-decoration-color: $tsp
+						text-decoration-thickness: 2px
+						text-underline-offset: 5px
+						&:hover
+							text-decoration-color: $w
 	.bottom
-		padding: 31px 0 38px
+		padding: 36px 0
 		position: relative
 		display: flex
 		align-items: center
@@ -90,20 +84,34 @@ footer
 			top: 0
 			left: 50%
 			transform: translate(-50%, -50%)
-			border-top: 1px solid #474747
-			width: 83vw
+			border-top: 1px solid $lBlueB
+			width: 100vw
 		.copyright, .development
 			font-size: 13px
 			font-weight: 500
 			line-height: 2.65
-			color: #eaeaea
+			color: rgba(#eaeaea, 0.5)
 			text-transform: uppercase
 		.development
 			display: flex
+			align-items: center
 			svg
 				margin-left: 12px
 				width: 104px
 				height: 38px
+		.socials
+			display: flex
+			align-items: center
+			justify-content: center
+			gap: 20px
+			a
+				svg
+					fill: $w
+					stroke: $w
+				&:hover svg
+					fill: $lBlueB
+					stroke: $lBlueB
+
 
 
 
