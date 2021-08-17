@@ -537,6 +537,9 @@ section.gallery
 		&.slick-next
 			right: -10px
 			transform: translate(100%, -50%)
+		&.slick-disabled
+			opacity: 1
+			visibility: visible
 	.toSlick
 		overflow: hidden
 		.slide
@@ -672,19 +675,32 @@ section.ment
 		form
 			width: 100%
 			margin-top: 70px
-			display: flex
-			flex-direction: column
-			align-items: center
-			gap: 18px
+			> p
+				display: flex
+				flex-direction: column
+				align-items: center
+				gap: 18px
+			.ajax-loader
+				position: absolute
+				opacity: 0
+				visibility: hidden
+				display: none
+			.wpcf7-response-output
+				margin: 0 !important
+				text-align: center
 			.angles_button
-				margin-top: 20px
+				margin: 20px auto 0
 				input
 					background-color: $w
 					color: $dBlueT
+				svg
+					stroke: $w
+					path
+						stroke: inherit
 				&:hover
 					input
 						background-color: $lBlueB
-					.angle
+					svg
 						stroke: $lBlueB
 
 

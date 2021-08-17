@@ -220,17 +220,23 @@ window.addEventListener("load", () => {
 
     const gallerySlider = document.querySelectorAll('section.gallery .toSlick');
     const gallerySlides = document.querySelectorAll('section.gallery .slick-slide');
+
+    const galleryPrev = document.querySelector('.slick-prev.hs1');
+    const galleryNext = document.querySelector('.slick-next.hs1');
+
     $(gallerySlides).click(function(e) {
       $(gallerySlides).removeClass('slick-current');
       e.currentTarget.classList.add('slick-current');
       slideIndex = e.currentTarget.getAttribute('data-slick-index');
+      if (slideIndex > 0) {
+        galleryPrev.classList.add('slick-disabled');
+      } else if (slideIndex < gallerySlides.length - 1) {
+        galleryNext.classList.add('slick-disabled');
+      }
       setTimeout(() => {
         $(gallerySlider).slick('slickGoTo', parseInt(e.currentTarget.getAttribute('data-slick-index')));
       }, 220);
     });
-
-    const galleryPrev = document.querySelector('.slick-prev.hs1');
-    const galleryNext = document.querySelector('.slick-next.hs1');
 
     // Init
     if (gallerySlides.length < 5) {

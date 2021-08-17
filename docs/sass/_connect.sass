@@ -1,6 +1,6 @@
 
-#modal-request
-	padding: 45px 30px 30px
+#wpcf7-f6-o1 form
+	padding: 45px 30px 0 30px
 	width: 400px
 	position: fixed
 	z-index: 3500
@@ -8,6 +8,12 @@
 	left: 50%
 	transform: translate(-50%, -50%)
 	background-color: $w
+	.wpcf7 .ajax-loader
+		position: absolute
+		bottom: 0
+	.wpcf7-response-output
+		margin: 0 !important
+		text-align: center
 	h3
 		font-size: 36px
 	.fields
@@ -16,24 +22,26 @@
 		flex-direction: column
 		gap: 16px
 		align-items: center
+		> span
+			width: 100%
 	input[type=submit]
-		margin-top: 20px
 		background-color: $lBlueB
 		&:hover
 			background-color: $dBlueB
 			color: $w
-	#close-request
+	p
 		position: absolute
-		padding: 0
 		top: 12px
 		right: 12px
-		background-color: $tsp
-		svg
-			transition: all 0.2s linear
-			stroke: $dBlueB
-		&:hover
-			transform: rotate(90deg) scale(0.8)
+		#close-request
+			padding: 0
+			background-color: $tsp
 			svg
-				stroke: $lBlueB
+				transition: all 0.2s linear
+				stroke: $dBlueB
+			&:hover
+				transform: rotate(90deg) scale(0.8)
+				svg
+					stroke: $lBlueB
 
 
