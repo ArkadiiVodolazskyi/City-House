@@ -191,7 +191,7 @@ input[type=text]::placeholder, input[type=tel]::placeholder { color: #000000; op
 
 #header_main #expand_menu.active .close { opacity: 1; visibility: visible; }
 
-#header_mobile { position: fixed; top: 74px; left: 0; width: 100vw; height: calc( 100vh - 74px); z-index: 400; background-color: rgba(25, 41, 68, 0.9); color: #ffffff; overflow: hidden; backdrop-filter: blur(5px); overflow: hidden; transition: all 0.4s ease; opacity: 0; visibility: hidden; }
+#header_mobile { position: fixed; z-index: 3000; top: 74px; left: 0; width: 100vw; height: calc( 100vh - 74px); background-color: rgba(25, 41, 68, 0.9); color: #ffffff; overflow: hidden; backdrop-filter: blur(5px); overflow: hidden; transition: all 0.4s ease; opacity: 0; visibility: hidden; }
 
 #header_mobile.active { opacity: 1; visibility: visible; }
 
@@ -675,33 +675,41 @@ footer .bottom .socials a:hover svg { fill: #CCDDFA; stroke: #CCDDFA; }
 
 #modal-request #close-request svg { transition: all 0.2s linear; stroke: #192944; }
 
+#modal-request #close-request:hover { transform: rotate(90deg) scale(0.8); }
+
 #modal-request #close-request:hover svg { stroke: #CCDDFA; }
 
-.fullscreen { position: fixed; z-index: 2000; top: 0; right: 0; bottom: 0; left: 0; width: 100vw; height: 100vh; padding: 67px 0; background-color: #CCDDFA; transition: all 0.3s ease-in; opacity: 0; visibility: hidden; }
+.fullscreen { position: fixed; z-index: 2000; top: 0; right: 0; bottom: 0; left: 0; width: 100vw; height: 100vh; background-color: #F6F9FF; transition: all 0.3s ease-in; opacity: 0; visibility: hidden; }
 
 .fullscreen.active { opacity: 1; visibility: visible; }
 
-#fullscreen-portfolio { color: #213657; background-color: #F6F9FF; overflow: hidden; }
+#fullscreen-portfolio { color: #213657; overflow: hidden; }
 
-#fullscreen-portfolio .wrapper { display: flex; flex-wrap: wrap; gap: 35px 100px; }
+#fullscreen-portfolio .wrapper { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 35px 100px; position: absolute; z-index: 2500; top: 60px; height: calc( 100vh - 120px); left: 50%; transform: translate(-50%, 0); opacity: 0; visibility: hidden; }
+
+#fullscreen-portfolio .wrapper.active { opacity: 1; visibility: visible; }
 
 #fullscreen-portfolio .wrapper > h3 { display: none; }
 
 #fullscreen-portfolio .sections { width: 100%; display: flex; gap: 20px; }
 
-#fullscreen-portfolio .sections button { padding: 22px 37px; font-size: 18px; background-color: #CCDDFA; color: #213657; }
+#fullscreen-portfolio .sections button { max-height: 64px; padding: 22px 37px; font-size: 18px; background-color: #CCDDFA; color: #213657; }
 
 #fullscreen-portfolio .sections button:hover, #fullscreen-portfolio .sections button.active { background-color: #192944; color: #F6F9FF; }
 
 #fullscreen-portfolio .left { width: calc( 66% - 50px); position: relative; }
 
-#fullscreen-portfolio .left::before { content: ''; position: absolute; width: 64vw; height: 280px; right: 0; bottom: -40px; background-color: #CCDDFA; }
+#fullscreen-portfolio .left::before { content: ''; position: absolute; width: 64vw; height: 280px; right: 0; bottom: -160px; background-color: #CCDDFA; }
 
-#fullscreen-portfolio .left .fullimage { height: 636px; }
+#fullscreen-portfolio .left .section_sliders { width: 100%; height: 100%; position: absolute; left: 0; top: 0; transition: all 0.2s linear; opacity: 0; visibility: hidden; }
 
-#fullscreen-portfolio .left .fullimage .toSlick { height: 100%; overflow: hidden; }
+#fullscreen-portfolio .left .section_sliders.active { opacity: 1; visibility: visible; }
 
-#fullscreen-portfolio .left .fullimage .toSlick .slide { vertical-align: middle; }
+#fullscreen-portfolio .left .fullimage { height: 636px; position: relative; }
+
+#fullscreen-portfolio .left .fullimage .toSlick { width: 100%; height: 100%; overflow: hidden; }
+
+#fullscreen-portfolio .left .fullimage .toSlick .slide { vertical-align: top; }
 
 #fullscreen-portfolio .left .minigallery { margin-top: 35px; display: flex; align-items: center; justify-content: center; }
 
@@ -713,13 +721,17 @@ footer .bottom .socials a:hover svg { fill: #CCDDFA; stroke: #CCDDFA; }
 
 #fullscreen-portfolio .left .minigallery .toSlick { margin: 0 30px; width: 657px; overflow: hidden; }
 
-#fullscreen-portfolio .left .minigallery .slide { width: 153px; height: 86px; margin: 0 7px; position: relative; z-index: 10; overflow: hidden; }
+#fullscreen-portfolio .left .minigallery .slide { width: 153px; height: 86px; margin: 0 7px; position: relative; z-index: 10; overflow: hidden; transition: all 0.2s linear; border: 2px solid #00000000; }
+
+#fullscreen-portfolio .left .minigallery .slide.slick-current { border-color: #192944; }
 
 #fullscreen-portfolio .left .minigallery .slide img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-height: 100%; min-width: 100%; width: auto; height: auto; }
 
 #fullscreen-portfolio .right { width: calc( 34% - 50px); padding-top: 40px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
 
-#fullscreen-portfolio .right .pros { margin-top: 90px; display: flex; flex-direction: column; gap: 65px; }
+#fullscreen-portfolio .right .pros { margin-top: 90px; flex-direction: column; gap: 65px; display: none; }
+
+#fullscreen-portfolio .right .pros.active { display: flex; }
 
 #fullscreen-portfolio .right .pros li { display: flex; align-items: center; gap: 35px; }
 
@@ -752,7 +764,6 @@ footer .bottom .socials a:hover svg { fill: #CCDDFA; stroke: #CCDDFA; }
 @media (max-width: 1600px) { h3 { font-size: 54px; }
   body { padding-top: 100px; }
   .fullscreen { padding: 24px 0; }
-  #fullscreen-portfolio .left::before { bottom: -60px; }
   #fullscreen-portfolio .left .fullimage { height: 600px; }
   #fullscreen-portfolio .right .pros { gap: 40px; }
   #header_main { height: 110px; }
@@ -778,7 +789,6 @@ footer .bottom .socials a:hover svg { fill: #CCDDFA; stroke: #CCDDFA; }
   #fullscreen-portfolio .wrapper { gap: 30px 70px; }
   #fullscreen-portfolio .sections button { padding: 16px 30px; }
   #fullscreen-portfolio .left { width: calc( 62% - 50px); }
-  #fullscreen-portfolio .left::before { bottom: -80px; }
   #fullscreen-portfolio .left .minigallery .toSlick { margin: 0 20px; }
   #fullscreen-portfolio .right { width: calc( 38% - 20px); }
   #fullscreen-portfolio #close-fullscreen-portfolio { top: 24px; right: 24px; }
@@ -877,7 +887,7 @@ footer .bottom .socials a:hover svg { fill: #CCDDFA; stroke: #CCDDFA; }
   #fullscreen-portfolio .wrapper > h3 { display: flex; font-size: 30px; }
   #fullscreen-portfolio .sections { margin-top: 24px; justify-content: center; }
   #fullscreen-portfolio .sections button { padding: 12px 24px; font-size: 14px; }
-  #fullscreen-portfolio .left { width: 100%; }
+  #fullscreen-portfolio .left { width: 100%; height: 310px; }
   #fullscreen-portfolio .left::before { bottom: unset; top: 0; width: 100%; height: 103%; }
   #fullscreen-portfolio .left .fullimage { height: 210px; margin-top: 30px; }
   #fullscreen-portfolio .left .fullimage .toSlick { width: 400px; margin: 0 auto; }

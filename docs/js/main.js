@@ -36,119 +36,59 @@ document.addEventListener("DOMContentLoaded", () => {
     'wrapAround': true
   });
 
-  // Slicks options
-  slickOptions = {
-    'hs1': {
-      // arrows: true,
-      draggable: false,
-      focusOnSelect: false,
-      infinite: false,
-      autoplay: false,
-      dots: false,
-      variableWidth: true,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      // prevArrow: $(".slick-prev.hs1"),
-      // nextArrow: $(".slick-next.hs1"),
-      speed: 500,
-      responsive: [
-        {
-          breakpoint: 1441,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            // arrows: true,
-            dots: false,
-          },
+  // Init hs1
+  $(".toSlick[data-type='hs1']").slick({
+    arrows: false,
+    draggable: false,
+    focusOnSelect: false,
+    infinite: false,
+    autoplay: false,
+    dots: false,
+    variableWidth: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    speed: 500,
+    responsive: [
+      {
+        breakpoint: 1441,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: false,
         },
-        {
-          breakpoint: 1025,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            // arrows: true,
-            dots: false,
-          },
+      },
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: false,
         },
-        {
-          breakpoint: 769,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            // arrows: true,
-            dots: false
-          },
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: false
         },
-        {
-          breakpoint: 481,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            // arrows: true,
-            dots: false,
-            draggable: true,
-            touchThreshold: 300
-          },
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: false,
+          draggable: true,
+          touchThreshold: 300
         },
-      ],
-    },
-    'hs2': {
-      arrows: false,
-      draggable: false,
-      focusOnSelect: false,
-      infinite: false,
-      autoplay: false,
-      dots: false,
-      variableWidth: false,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    },
-    'hs3': {
-      arrows: true,
-      draggable: false,
-      focusOnSelect: false,
-      infinite: false,
-      autoplay: false,
-      dots: false,
-      variableWidth: true,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      prevArrow: $(".slick-prev.hs3"),
-      nextArrow: $(".slick-next.hs3"),
-      asNavFor: '.toSlick[data-type=hs2]',
-      responsive: [
-        {
-          breakpoint: 1281,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            arrows: true,
-            dots: false,
-          },
-        },
-      ],
-    },
-  }
-
-  // Init desktops
-  const toSlicks = document.querySelectorAll('.toSlick[data-type]:not([data-mobile=true])');
-  if (toSlicks.length) {
-    toSlicks.forEach(toSlick => {
-      const type = toSlick.getAttribute('data-type');
-      $(toSlick).slick(slickOptions[type]);
-    });
-  }
-
-  // Init mobiles
-  const toSlicksMob = document.querySelectorAll('.toSlick[data-mobile=true]');
-  if (toSlicksMob.length) {
-    toSlicksMob.forEach(toSlick => {
-      if (window.innerWidth <= toSlick.getAttribute('data-screen')) {
-        const type = toSlick.getAttribute('data-type');
-        $(toSlick).slick(slickOptions[type]);
-      }
-    });
-  }
+      },
+    ],
+  });
 });
 
 window.addEventListener("load", () => {
@@ -247,16 +187,30 @@ window.addEventListener("load", () => {
   (function() {
     const markers = document.querySelectorAll('.plan_markers .marker');
     const fullscreen = document.getElementById('fullscreen-portfolio');
+    const houses = fullscreen.querySelectorAll('.wrapper');
     const closeFullscreen = document.getElementById('close-fullscreen-portfolio');
+
+    // Open house + first slider + fullscreen
     for (let i = 0; i < markers.length; i++) {
       markers[i].addEventListener('click', () => {
+        const house_index = markers[i].getAttribute('data-marker');
+        const firstSlider = houses[house_index].querySelector('.left .section_sliders');
+        houses[house_index].classList.add('active');
+        firstSlider.classList.add('active');
         fullscreen.classList.add('active');
         header.classList.add('active');
       }, true);
     }
+
     closeFullscreen.addEventListener('click', () => {
       fullscreen.classList.remove('active');
       header.classList.remove('active');
+      houses.forEach(house => {
+        house.classList.remove('active');
+        house.querySelectorAll('.left .section_sliders').forEach(slider => {
+          slider.classList.remove('active');
+        });
+      });
     }, true);
   })();
 
@@ -277,44 +231,47 @@ window.addEventListener("load", () => {
 
     const galleryPrev = document.querySelector('.slick-prev.hs1');
     const galleryNext = document.querySelector('.slick-next.hs1');
+
+    // Init
+    if (gallerySlides.length < 5) {
+      galleryPrev.classList.add('slick-disabled');
+    }
+
     galleryPrev.addEventListener('click', () => {
       slideIndex--;
-      console.log(`${slideIndex} / ${gallerySlides.length - 1}`);
-      if (slideIndex < gallerySlides.length - 1) {
-        galleryNext.classList.remove('slick-disabled');
-      }
-      if (slideIndex <= 0) {
-        slideIndex = 0;
-        galleryPrev.classList.add('slick-disabled');
-      } else {
-        const nextSlide = document.querySelector(`section.gallery .slick-slide[data-slick-index="${slideIndex}"]`);
+      galleryNext.classList.remove('slick-disabled');
+      const nextSlide = document.querySelector(`section.gallery .slick-slide[data-slick-index="${slideIndex}"]`);
+      if (nextSlide) {
         $(gallerySlides).removeClass('slick-current');
         nextSlide.classList.add('slick-current');
         setTimeout(() => {
           $(gallerySlider).slick('slickGoTo', slideIndex);
         }, 220);
         galleryPrev.classList.remove('slick-disabled');
+
+        // Check if the first slide
+        if (slideIndex - 1 === 0) {
+          galleryPrev.classList.add('slick-disabled');
+        }
       }
     }, true);
+
     galleryNext.addEventListener('click', () => {
       slideIndex++;
-      console.log(`${slideIndex} / ${gallerySlides.length - 1}`);
-      if (slideIndex > 0) {
-        galleryPrev.classList.remove('slick-disabled');
-      }
-      if (slideIndex == gallerySlides.length - 1) {
-        galleryNext.classList.add('slick-disabled');
-      }
-      if (slideIndex >= gallerySlides.length - 1) {
-        slideIndex = gallerySlides.length - 1;
-      } else {
-        const nextSlide = document.querySelector(`section.gallery .slick-slide[data-slick-index="${slideIndex}"]`);
+      galleryPrev.classList.remove('slick-disabled');
+      const nextSlide = document.querySelector(`section.gallery .slick-slide[data-slick-index="${slideIndex}"]`);
+      if (nextSlide) {
         $(gallerySlides).removeClass('slick-current');
         nextSlide.classList.add('slick-current');
         setTimeout(() => {
           $(gallerySlider).slick('slickGoTo', slideIndex);
         }, 220);
         galleryNext.classList.remove('slick-disabled');
+
+        // Check if the last slide
+        if (slideIndex + 1 > gallerySlides.length - 1) {
+          galleryNext.classList.add('slick-disabled');
+        }
       }
     }, true);
   })();
@@ -326,8 +283,6 @@ window.addEventListener("load", () => {
     const closeFullscreenPortfolio = document.getElementById('close-fullscreen-portfolio');
     for (let i = 0; i < openFullscreenPortfolio.length; i++) {
       openFullscreenPortfolio[i].addEventListener('click', (e) => {
-        const slideIndex = e.target.getAttribute('data-slide');
-        $('.toSlick[data-type="hs6"]').slick('slickGoTo', slideIndex);
         fullscreenPortfolio.classList.add('active');
       }, true);
     }
@@ -363,7 +318,82 @@ window.addEventListener("load", () => {
     }
   })();
 
-  AOS.refresh();
+  // Popup change sections
+  (function() {
+    const houses = document.querySelectorAll('#fullscreen-portfolio .wrapper');
+    const markers = document.querySelectorAll('.plan_markers .marker');
+
+    for (let i = 0; i < houses.length; i++) {
+      const sectionBtns = houses[i].querySelectorAll('.sections button');
+      const sectionSliders = houses[i].querySelectorAll('.left .section_sliders');
+      const sectionPros = houses[i].querySelectorAll('.right .pros');
+
+      // Init sliders
+      for (let j = 0; j < sectionSliders.length; j++) {
+        const mini = sectionSliders[j].querySelector('.minigallery .toSlick');
+        const miniPrev = sectionSliders[j].querySelector('.minigallery .slick-prev');
+        const miniNext = sectionSliders[j].querySelector('.minigallery .slick-next');
+        const full = sectionSliders[j].querySelector('.fullimage .toSlick');
+
+        // Init hs2
+        $(full).slick({
+          arrows: false,
+          draggable: false,
+          focusOnSelect: false,
+          infinite: false,
+          autoplay: false,
+          dots: false,
+          variableWidth: false,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        });
+
+        // Init hs3
+        $(mini).slick({
+          arrows: true,
+          draggable: false,
+          focusOnSelect: false,
+          infinite: false,
+          autoplay: false,
+          dots: false,
+          variableWidth: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          prevArrow: $(miniPrev),
+          nextArrow: $(miniNext),
+          asNavFor: $(full),
+          responsive: [
+            {
+              breakpoint: 1281,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: false,
+              },
+            },
+          ],
+        });
+      }
+
+      // Chenge sections
+      for (let j = 0; j < sectionBtns.length; j++) {
+        sectionBtns[j].addEventListener('click', () => {
+          if (!sectionBtns[j].classList.contains('active')) {
+            for (let k = 0; k < sectionBtns.length; k++) {
+              sectionBtns[k].classList.remove('active');
+              sectionSliders[k].classList.remove('active');
+              sectionPros[k].classList.remove('active');
+            }
+            sectionBtns[j].classList.add('active');
+            sectionSliders[j].classList.add('active');
+            sectionPros[j].classList.add('active');
+          }
+        }, true);
+      }
+    }
+
+  })();
 });
 
 window.addEventListener('load', AOS.refresh);
