@@ -57,6 +57,8 @@ body
 	z-index: 1
 	padding-top: calc( #{$header_height} - 5px )
 	background-color: #f6fffb
+	&.discroll
+		overflow: hidden
 
 section
 	position: relative
@@ -222,6 +224,10 @@ input[type=tel]
 			fill: $lBlueB
 		p::after
 			width: 100%
+
+.wpcf7-response-output
+	max-height: 200px
+	animation: fadeOut 2s forwards linear
 
 /* __________________ Slick Classes __________________ */
 .slick-arrow, button.hs1

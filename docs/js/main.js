@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $(".toSlick[data-type='hs1']").slick({
     arrows: false,
     draggable: false,
+    swipe: false,
     focusOnSelect: false,
     infinite: false,
     autoplay: false,
@@ -82,9 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           arrows: false,
-          dots: false,
-          draggable: true,
-          touchThreshold: 300
+          dots: false
         },
       },
     ],
@@ -147,12 +146,37 @@ window.addEventListener("load", () => {
 
   // Header roll
   (function() {
+    const headerLinks = document.querySelectorAll('#header_main .nav_link');
+    const sectionTop = [];
+    for (let i = 0; i < headerLinks.length; i++) {
+      const section = document.querySelector(headerLinks[i].getAttribute('href'));
+
+      // Fix strange bug with sections Yoffset
+      if (i === 0) {
+        sectionTop.push(section.offsetTop);
+      } else {
+        sectionTop.push(section.offsetTop - window.innerHeight);
+      }
+    }
+
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 50) {
+      let currentPos = window.pageYOffset;
+
+      if (currentPos > 50) {
         header.classList.add('roll');
       } else {
         header.classList.remove('roll');
       }
+
+      for (let i = 0; i < sectionTop.length; i++) {
+        if (currentPos >= sectionTop[i] - 200) {
+          headerLinks.forEach(link => {
+            link.classList.remove('active');
+          })
+          headerLinks[i].classList.add('active');
+        }
+      }
+
     }, true);
   })();
 
@@ -164,7 +188,19 @@ window.addEventListener("load", () => {
       header.classList.toggle('active');
       header_mobile.classList.toggle('active');
       expand_menu.classList.toggle('active');
+      body.classList.toggle('discroll');
     }, true);
+
+    // Close menu on nav item click
+    const mobile_navs = header_mobile.querySelectorAll('nav ul li');
+    mobile_navs.forEach(item => {
+      item.addEventListener('click', () => {
+        header.classList.remove('active');
+        header_mobile.classList.remove('active');
+        expand_menu.classList.remove('active');
+        body.classList.remove('discroll');
+      }, true);
+    });
   })();
 
   // Toggle pros
@@ -199,12 +235,14 @@ window.addEventListener("load", () => {
         firstSlider.classList.add('active');
         fullscreen.classList.add('active');
         header.classList.add('active');
+        body.classList.add('discroll');
       }, true);
     }
 
     closeFullscreen.addEventListener('click', () => {
       fullscreen.classList.remove('active');
       header.classList.remove('active');
+      body.classList.remove('discroll');
       houses.forEach(house => {
         house.classList.remove('active');
         house.querySelectorAll('.left .section_sliders').forEach(slider => {
@@ -229,8 +267,13 @@ window.addEventListener("load", () => {
       e.currentTarget.classList.add('slick-current');
       slideIndex = e.currentTarget.getAttribute('data-slick-index');
       if (slideIndex > 0) {
+        galleryPrev.classList.remove('slick-disabled');
+      } else {
         galleryPrev.classList.add('slick-disabled');
-      } else if (slideIndex < gallerySlides.length - 1) {
+      }
+      if (slideIndex < gallerySlides.length - 1) {
+        galleryNext.classList.remove('slick-disabled');
+      } else {
         galleryNext.classList.add('slick-disabled');
       }
       setTimeout(() => {
@@ -299,7 +342,7 @@ window.addEventListener("load", () => {
 
   // open-request
   (function() {
-    const modalRequest = document.getElementById('modal-request');
+    const modalRequest = document.getElementById('wpcf7-f6-o1');
     const openRequests = document.querySelectorAll('.open-request');
     const closeRequest = document.getElementById('close-request');
 
@@ -308,9 +351,11 @@ window.addEventListener("load", () => {
         openRequest.addEventListener('click', () => {
           overlay.classList.add('active');
           modalRequest.classList.add('active');
-          overlay.addEventListener('click', () => {
-            overlay.classList.remove('active');
-            modalRequest.classList.remove('active');
+          overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+              overlay.classList.remove('active');
+              modalRequest.classList.remove('active');
+            }
           }, true);
         }, true);
       });
@@ -351,7 +396,21 @@ window.addEventListener("load", () => {
           dots: false,
           variableWidth: false,
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 1025,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: false,
+                draggable: true,
+                touchThreshold: 300,
+                swipe: true
+              },
+            },
+          ],
         });
 
         // Init hs3
@@ -378,7 +437,28 @@ window.addEventListener("load", () => {
                 dots: false,
               },
             },
+            {
+              breakpoint: 1025,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: false,
+                draggable: true,
+                touchThreshold: 300,
+                swipe: true
+              },
+            },
           ],
+        });
+
+        // Click on slide
+        const mini_slides = mini.querySelectorAll('.slide');
+        $(mini_slides).click(function(e) {
+          $(mini_slides).removeClass('slick-current');
+          e.currentTarget.classList.add('slick-current');
+          $(mini).slick('slickGoTo', parseInt(e.currentTarget.getAttribute('data-slick-index')));
+          $(full).slick('slickGoTo', parseInt(e.currentTarget.getAttribute('data-slick-index')));
         });
       }
 

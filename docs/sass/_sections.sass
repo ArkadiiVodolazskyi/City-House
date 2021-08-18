@@ -141,10 +141,9 @@ section.pros
 			overflow: hidden
 			img
 				position: absolute
-				min-width: 100%
-				min-height: 100%
+				height: 110%
 				width: auto
-				height: auto
+				min-width: 100%
 				top: 50%
 				left: 50%
 				transform: translate(-50%, -50%)
@@ -334,7 +333,7 @@ section.planning
 							visibility: visible
 							transform: translate(-50%, calc( -100% - 18px ))
 				.marker:hover
-					@for $i from 1 through 8
+					@for $i from 1 through 9
 						#marker_#{$i}
 							stop:first-child
 								stop-color: $yellow
@@ -538,8 +537,8 @@ section.gallery
 			right: -10px
 			transform: translate(100%, -50%)
 		&.slick-disabled
-			opacity: 1
-			visibility: visible
+			opacity: 0
+			visibility: hidden
 	.toSlick
 		overflow: hidden
 		.slide

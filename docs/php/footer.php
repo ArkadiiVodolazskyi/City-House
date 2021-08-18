@@ -4,7 +4,7 @@
 			<div class="top">
 				<div class="wrapper">
 					<div class="logo_wrapper">
-						<a href="#" class="logo_kadorrcity">
+						<a href="<?= get_home_url(); ?>" class="logo_kadorrcity">
 							<svg class="icon" width="79" height="69">
 								<use xlink:href="<?= B_IMG_DIR; ?>/icons.svg#logo_kadorr"></use>
 							</svg>
@@ -133,15 +133,25 @@
 		];
 
 		const center = {
-			lat: coordinates[0][0][0],
-			lng: coordinates[0][1][1]
+			lat: 46.4454375,
+			lng: 30.7338125
 		};
 
 		const map = new google.maps.Map(document.querySelector("#map"), {
 			center: center,
-			zoom: 14,
+			zoom: 12,
 			disableDefaultUI: false,
 			scrollwheel: false,
+		});
+		// Center marker
+		const marker = new google.maps.Marker({
+			position: center,
+			map: map,
+			label: {
+				text: `Kadorr City`,
+				fontSize: "20px",
+				fontFamily: 'Gilroy'
+			}
 		});
 
 		const markers = [];

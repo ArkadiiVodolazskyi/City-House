@@ -191,10 +191,34 @@
 		.right form .angles_button
 			margin-top: 0
 
-@media (max-width: 1280px)
+@media (max-width: 1366px)
+	h3
+		font-size: 42px
 	#header_main
 		.socials, .phones
 			display: none
+	#fullscreen-portfolio
+		.wrapper
+			top: 30px
+		.left
+			&::before
+				top: 350px
+				height: 320px
+			.fullimage
+				height: 400px
+			.minigallery
+				margin-top: 20px
+		.right .pros
+			margin-top: 40px
+			gap: 20px
+			li
+				img
+					max-width: 40px
+					max-height: 40px
+				> div p
+					font-size: 20px
+
+@media (max-width: 1280px)
 	footer
 		.top
 			.contacts
@@ -451,7 +475,7 @@
 				z-index: 1
 				top: 0
 				left: -7vw
-				background-color: $cream
+				background-color: #f6fffb
 				width: 100vw
 				height: 100%
 			h3
@@ -511,7 +535,7 @@
 			gap: 12px
 		.phones a
 			font-size: 20px
-	#modal-request #close-request svg
+	#wpcf7-f6-o1 form #close-request svg
 		max-width: 24px
 		max-height: 24px
 
@@ -614,6 +638,7 @@
 	#header_mobile
 		.wrapper
 			overflow: visible
+			padding: 15px 0
 		nav ul li a
 			font-size: 15px
 			padding: 10px
@@ -663,19 +688,48 @@
 				gap: 50px
 
 	#fullscreen-portfolio
-		padding-top: 60px
+		padding: 20px 0
+		.wrapper
+			top: 20px
+		h3
+			font-size: 24px
 		.sections
-			gap: 10px
-		.right .angles_button
 			margin-top: 10px
+			gap: 10px
+			button
+				font-size: 12px
+		.left
+			height: 278px
+			.fullimage
+				margin-top: 12px
+				.toSlick
+					width: 100%
+			.minigallery
+				margin-top: 8px
+				.slide
+					margin: 0 2px
+		.right
+			padding-top: 20px
+			.pros li img
+				max-width: 30px
+				max-height: 30px
+			.angles_button
+				margin-top: 10px
+				padding: 16px
+				.angle
+					max-width: 30px
+					max-height: 30px
+				button
+					font-size: 12px
+					padding: 10px 20px
 		#close-fullscreen-portfolio
 			padding: 3px
-			top: 15px
-			right: 15px
+			top: 5px
+			right: 5px
 			svg
-				max-width: 24px
-				max-height: 24px
-	#modal-request
+				max-width: 20px
+				max-height: 20px
+	#wpcf7-f6-o1 form
 		width: 100%
 		h3
 			font-size: 30px
@@ -696,6 +750,9 @@
 	section.pros .content
 		.left .gallery
 			height: 270px
+			img
+				width: 120%
+				height: auto
 		ul
 			width: 100%
 			li
@@ -709,6 +766,8 @@
 			height: 200px
 			transform: translate(0, -65%)
 			transition-duration: 0.7s
+			stroke-dashoffset: 1250
+			stroke: $dBlueB
 		.content
 			margin-top: 30px
 			.left
@@ -785,11 +844,76 @@
 						right: -18px
 
 @media (max-width: 360px)
+	#fullscreen-portfolio
+		padding: 20px 0
+		.wrapper
+			top: 20px
+			h3
+				font-size: 24px
+		.sections
+			margin-top: 10px
+			gap: 10px
+			button
+				font-size: 12px
+				padding: 8px 16px
+		.left
+			height: 278px
+			&::before
+				height: 96%
+			.fullimage
+				margin-top: 12px
+				height: 190px
+				.toSlick
+					width: 100%
+			.minigallery
+				margin-top: 8px
+				.slide
+					margin: 0 2px
+		.right
+			padding-top: 0
+			.pros li
+				gap: 12px
+				img
+					max-width: 24px
+					max-height: 24px
+				> div p
+					font-size: 12px
+			.angles_button
+				margin-top: 10px
+				padding: 12px
+				.angle
+					max-width: 24px
+					max-height: 24px
+				button
+					font-size: 12px
+					padding: 8px 16px
+
+	#header_mobile
+		nav ul li a
+			padding: 5px 10px
+		.contacts
+			gap: 10px
+			svg
+				max-width: 24px
+				max-height: 24px
+			.phones a
+				font-size: 16px
+		.contacts a, .contacts > div
+			gap: 12px
+			font-size: 14px
+		.bottom .copyright
+			margin-top: 10px
+		.bottom .development
+			margin-top: 3px
+			padding-top: 3px
+
+
 	section.gallery .toSlick .slide
 		width: 160px
 		&.slick-current
 			width: 280px
-
+	section.security .left .cards .card h5
+		font-size: 14px
 
 
 

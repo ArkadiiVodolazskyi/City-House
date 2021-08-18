@@ -3,7 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+	<!-- Disable landscape -->
+	<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+
 	<title><?php bloginfo('name'); ?></title>
 
 	<!-- Fonts -->
@@ -23,7 +27,7 @@
 	<header id="header_main">
 		<div class="wrapper">
 
-			<a href="#" class="logo_kadorrcity">
+			<a href="<?= get_home_url(); ?>" class="logo_kadorrcity">
 				<svg class="icon" width="79" height="69">
 					<use xlink:href="<?= B_IMG_DIR; ?>/icons.svg#logo_kadorr"></use>
 				</svg>
@@ -121,7 +125,7 @@
 					</a>
 				</div>
 				<div class="address">
-					<svg class="stroke" width="49" height="49">
+					<svg class="stroke" width="24" height="24">
 						<use xlink:href="<?= B_IMG_DIR; ?>/icons.svg#location"></use>
 					</svg>
 					<div>
@@ -131,7 +135,7 @@
 					</div>
 				</div>
 				<div class="schedule">
-					<svg class="stroke" width="43" height="43">
+					<svg class="stroke" width="24" height="24">
 						<use xlink:href="<?= B_IMG_DIR; ?>/icons.svg#calendar"></use>
 					</svg>
 					<div>
@@ -277,10 +281,13 @@
 						$pros = $section['pros'];
 					?>
 						<ul class="pros <?= $key === 0 ? 'active' : ''; ?>">
-							<?php foreach($pros as $pro) {
-								$img = $pro['img'];
-								$small = $pro['text']['small'];
-								$normal = $pro['text']['normal'];
+							<?php
+							if (is_array($pros)) {
+							foreach($pros as $pro) {
+								$img = $pro['img'] ? $pro['img'] : null;
+								$small = $pro['text']['small'] ? $pro['text']['small'] : 0;
+								$normal = $pro['text']['normal'] ? $pro['text']['normal'] : 0;
+								if ($img && $normal) {
 							?>
 								<li>
 									<img src="<?= $img; ?>" alt="ico_pro">
@@ -297,7 +304,28 @@
 										<?php } ?>
 									</div>
 								</li>
-							<?php } ?>
+							<?php }}} else {
+								$img = $pro[0]['img'];
+								$small = $pro[0]['text']['small'];
+								$normal = $pro[0]['text']['normal'];
+								if ($img && $normal) {
+							?>
+								<li>
+									<img src="<?= $img; ?>" alt="ico_pro">
+									<div>
+										<?php if ($small) { ?>
+											<span>
+												<?= $small; ?>
+											</span>
+										<?php } ?>
+										<?php if ($normal) { ?>
+											<p>
+												<?= $normal; ?>
+											</p>
+										<?php } ?>
+									</div>
+								</li>
+							<?php }} ?>
 						</ul>
 					<?php } ?>
 
